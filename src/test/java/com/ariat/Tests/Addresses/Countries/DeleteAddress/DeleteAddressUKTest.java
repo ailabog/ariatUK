@@ -64,27 +64,9 @@ public class DeleteAddressUKTest extends BaseTest {
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.deleteAddressCreatedNo("nnn");
 		addressesPage.deleteAddressCreatedYes("nn");
-		//addressesPage.checkAddress("nnn");
 		logger.info("Finishing deleting address UK test");
 	}
 
-	@Test(priority = 1)
-	public void deleteAddressFromEditUKTest() {
-		logger.info("Starting deleting address from Edit address UK test");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
-		myAccountPage = signInPage.returnMyAccountPage();
-		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addAddressPage = addressesPage.returnAddressesEdit();
-		addressesPage = addAddressPage.returnAddressesFromEditDeletePage();
-		addressesPage.checkAddress("ccc");
-		logger.info("Finishing deleting address from Edit address UK test");
-	}
-	
 	@AfterTest
 	public void clearBrowserSession() {
 		KillChrome kill = new KillChrome();
