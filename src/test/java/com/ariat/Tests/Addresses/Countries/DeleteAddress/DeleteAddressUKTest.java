@@ -80,6 +80,5 @@ public class DeleteAddressUKTest extends BaseTest {
 		signInPage.quit();
 		myAccountPage.quit();
 		addressesPage.quit();
-		addAddressPage.quit();
 	}
 }
