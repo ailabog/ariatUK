@@ -3,10 +3,6 @@ package com.ariat.Pages.HomePagesCountries;
 
 import static org.testng.Assert.assertEquals;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,11 +25,10 @@ import com.ariat.Pages.Header.FindARetailerPage;
 import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Pages.Main.MyAccountWishListPage;
-import com.ariat.Pages.Main.ReturnPolicyPage;
 import com.ariat.Pages.Products.CasualShoeProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
-public class HomePageUK extends BasePage implements List<HomePage> {
+public class HomePageUK extends BasePage {
 
 	public HomePageUK(WebDriver driver) {
 		super(driver);
@@ -474,14 +469,6 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 		return new OrderStatusPage(driver);
 	}
 
-	public ReturnPolicyPage returnReturnPolicyPage() {
-		WebDriverUtils.scrollBottomPage(driver, returnsFooter);
-		WebDriverUtils.clickOnElementWithWait(driver, returnsFooter);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(returnsFooterText));
-		return new ReturnPolicyPage(driver);
-	}
-
 	public TrackYourOrderPage returnTrackYourOrderPage() {
 		WebDriverUtils.scrollBottomPage(driver, trackYourOrderFooterLink);
 		WebDriverUtils.clickOnElementWithWait(driver, trackYourOrderFooterLink);
@@ -577,141 +564,5 @@ public class HomePageUK extends BasePage implements List<HomePage> {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(topsAndTshirtsText));
 		return new WomenClothingTopsAndTshirtsPage(driver);
-	}
-
-	@Override
-	public boolean add(HomePage e) {
-
-		return false;
-	}
-
-	@Override
-	public void add(int index, HomePage element) {
-
-	}
-
-	@Override
-	public boolean addAll(Collection<? extends HomePage> c) {
-
-		return false;
-	}
-
-	@Override
-	public boolean addAll(int index, Collection<? extends HomePage> c) {
-
-		return false;
-	}
-
-	@Override
-	public void clear() {
-
-	}
-
-	@Override
-	public boolean contains(Object o) {
-
-		return false;
-	}
-
-	@Override
-	public boolean containsAll(Collection<?> c) {
-
-		return false;
-	}
-
-	@Override
-	public HomePage get(int index) {
-
-		return null;
-	}
-
-	@Override
-	public int indexOf(Object o) {
-
-		return 0;
-	}
-
-	@Override
-	public boolean isEmpty() {
-
-		return false;
-	}
-
-	@Override
-	public Iterator<HomePage> iterator() {
-
-		return null;
-	}
-
-	@Override
-	public int lastIndexOf(Object o) {
-
-		return 0;
-	}
-
-	@Override
-	public ListIterator<HomePage> listIterator() {
-
-		return null;
-	}
-
-	@Override
-	public ListIterator<HomePage> listIterator(int index) {
-
-		return null;
-	}
-
-	@Override
-	public boolean remove(Object o) {
-
-		return false;
-	}
-
-	@Override
-	public HomePage remove(int index) {
-
-		return null;
-	}
-
-	@Override
-	public boolean removeAll(Collection<?> c) {
-
-		return false;
-	}
-
-	@Override
-	public boolean retainAll(Collection<?> c) {
-
-		return false;
-	}
-
-	@Override
-	public HomePage set(int index, HomePage element) {
-
-		return null;
-	}
-
-	@Override
-	public int size() {
-
-		return 0;
-	}
-
-	@Override
-	public List<HomePage> subList(int fromIndex, int toIndex) {
-
-		return null;
-	}
-
-	@Override
-	public Object[] toArray() {
-
-		return null;
-	}
-
-	@Override
-	public <T> T[] toArray(T[] a) {
-
-		return null;
 	}
 }

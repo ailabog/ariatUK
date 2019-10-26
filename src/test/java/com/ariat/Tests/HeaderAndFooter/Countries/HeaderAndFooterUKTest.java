@@ -45,16 +45,7 @@ public class HeaderAndFooterUKTest extends BaseTest{
 		logger.info("Finishing the check for Header UK elements:");
 	}
 	
-	@Test(priority=1)
-	public void UKFooter() {
-		logger.info("Starting the check for Footer UK elements:");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		homePageUK.checkElementsFooter();
-		logger.info("Finishing the check for Footer UK elements:");
-	}
-	
+
 	@AfterTest
 	public void clearBrowserSession() {
 		KillChrome kill = new KillChrome();

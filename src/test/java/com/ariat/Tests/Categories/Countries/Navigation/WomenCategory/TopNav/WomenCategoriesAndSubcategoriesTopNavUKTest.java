@@ -84,26 +84,6 @@ public class WomenCategoriesAndSubcategoriesTopNavUKTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority = 0)
-	public void navigateWomenFootwearCategories() {
-		logger.info("Starting navigate Women Footwear sub-categories test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenFootwearPage = womenCategoryPage.returnWomenFootwearPage();
-		womenCategoryPage.womenCategory();
-		womenFootwearRidingPage = womenFootwearPage.returnWomenFootwearRidingCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenFootwearWesternPage = womenFootwearPage.returnWomenFootwearWesternCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenFootwearCountryPage = womenFootwearPage.returnWomenFootwearCountryCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenFootwearCasualShoesPage = womenFootwearPage.returnWomenFootwearCasualShoesCategoryPage();
-		logger.info("Finishing navigate Women Footwear sub-categories test.");
-	}
-
 	@Test(priority = 1)
 	public void navigateWomenClothingCategoriesTest() {
 		logger.info("Starting navigate Women Clothing sub-categories test...");
@@ -126,45 +106,6 @@ public class WomenCategoriesAndSubcategoriesTopNavUKTest extends BaseTest {
 		logger.info("Finishing navigate Women Clothing sub-categories test.");
 	}
 
-	@Test(priority = 2)
-	public void navigateWomenAccessoriesCategoriesTest() {
-		logger.info("Starting navigate Women Accessories sub-categories test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenAccessoriesBagsPage = womenAccessoriesPage.returnWomenAccessoriesBagsCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenAccessoriesHeadwearPage = womenAccessoriesPage.returnWomenAccessoriesHeadwearCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenAccessoriesScarfAndPonchosPage = womenAccessoriesPage.returnWomenAccessoriesScarfAndPonchosCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenAccessoriesSocksPage = womenAccessoriesPage.returnWomenAccessoriesSocksCategoryPage();
-		logger.info("Finishing navigate Women Accessories sub-categories test.");
-	}
-
-	@Test(priority = 3)
-	public void navigateWomenFeaturedCategoriesTest() {
-		logger.info("Starting navigate Women Featured sub-categories test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenFeaturedPage = womenCategoryPage.returnWomenFeaturedCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenFeaturedHeritageCollectionPage = womenFeaturedPage.returnWomenFeaturedHeritageCollectionCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenFeaturedWarmWeatherRidingPage = womenFeaturedPage.returnWomenFeaturedWarmWeatherRidingCategoryPage();
-		womenCategoryPage.womenCategory();
-		womenFeaturedTriFactorBreechPage = womenFeaturedPage.returWomenFeaturedTriFactorBreechCategoryPage();
-		logger.info("Finishing navigate Women Featured sub-categories test.");
-	} 
 	
 	@AfterTest
 	public void clearBrowserSession() {

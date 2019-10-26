@@ -3,8 +3,6 @@ package com.ariat.Pages.Main;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import com.ariat.Pages.ReturnItemsPage;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -30,14 +28,6 @@ public class OrderDetailsPage extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(myOrdersText));
 		return new MyOrdersPage(driver);
-	}
-	
-	public ReturnItemsPage returnReturnItemsPage() {
-		WebDriverUtils.scrollMiddlePage(driver, createReturnButton);
-		WebDriverUtils.clickOnElementWithWait(driver, createReturnButton);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(myOrdersText));
-		return new ReturnItemsPage(driver);
 	}
 	
 	public MyOrdersPage returnMyOrdersBackFromOrderDetailsPage() {
