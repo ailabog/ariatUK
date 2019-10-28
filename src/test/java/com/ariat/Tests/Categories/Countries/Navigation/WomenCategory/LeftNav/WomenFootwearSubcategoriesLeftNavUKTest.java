@@ -155,9 +155,5 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 		womenFootwearWesternPage.quit();
 		womenFootwearWesternPerformancePage.quit();
 		womenFootwearWesternFashionPage.quit();
-
-		womenFootwearCasualShoesPage.quit();
-		womenFootwearSneakersPage.quit();
-		womenFootwearCasual.quit();
 	}
 }

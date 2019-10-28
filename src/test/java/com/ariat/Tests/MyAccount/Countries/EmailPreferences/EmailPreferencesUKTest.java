@@ -1,12 +1,10 @@
 package com.ariat.Tests.MyAccount.Countries.EmailPreferences;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;

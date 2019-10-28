@@ -45,8 +45,6 @@ public class HomePage extends BasePage  {
 		return new HomePage(driver);
 	}
 
-
-
 	public HomePageUK chooseEULocation(EUCountries euCountry, String currency) {
 		logger.info("Selecting EU  Ariat store country...");
 
@@ -54,7 +52,7 @@ public class HomePage extends BasePage  {
 		
 
        //local version
-		/* case "(United Kingdom)":
+		/*case "(United Kingdom)":
 			logger.info("I choose English United Kingdom as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
@@ -68,7 +66,7 @@ public class HomePage extends BasePage  {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.UK.getLocator());
 			}
-			return new HomePageUK(driver); */
+			return new HomePageUK(driver);*/
 			
 		//Jenkins version 
 			case "(United Kingdom)":
