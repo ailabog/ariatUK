@@ -131,14 +131,6 @@ public class EmailPreferencePage extends BasePage {
 		WebDriverUtils.selectVisibleText(driver, monthSelect, monthValue);
 		logger.info("Selecting day of birth..");
 		WebDriverUtils.selectVisibleText(driver, daySelect, dayValue);
-		
-	}
-	
-	
-	
-	public void savePrefUS() {
-		logger.info("Saving email preferences..");
-		WebDriverUtils.clickOnElementWithWait(driver, saveprefBtn);
 	}
 	
 	
@@ -149,38 +141,6 @@ public class EmailPreferencePage extends BasePage {
 		logger.info("Changes were saved");
 	}
 	
-	public void enterEmailUS(String emailValue) {
-		logger.info("Entering email..");
-		WebDriverUtils.enterTextBox(driver, emailTxtBoxUS, emailValue);
-	}
-	
-	public void enterConfirmEmailUS(String confirmEmailValue) {
-		logger.info("Entering email..");
-		WebDriverUtils.enterTextBox(driver, confirmEmailTxtBoxUS, confirmEmailValue);
-	}
-	
-	public void enterFNameUS(String fName) {
-		logger.info("Entering First name..");
-		WebDriverUtils.enterTextBox(driver, fNameTxtBoxUS, fName);
-	}
-	
-	public void enterLNameUS(String lName) {
-		logger.info("Entering Last name..");
-		WebDriverUtils.enterTextBox(driver, lNameTxtBoxUS, lName);
-	}
-
-	public void checkGenderFemaleUS() {
-		WebDriverUtils.clickOnElementWithWait(driver, genderCheckUS);
-	}
-	
-	public void selectBirthDataUS(String monthValue, String dayValue, String yearValue) {
-		logger.info("Selecting month of birth..");
-		WebDriverUtils.selectVisibleText(driver, monthSelectUS, monthValue);
-		logger.info("Selecting day of birth..");
-		WebDriverUtils.selectVisibleText(driver, daySelectUS, dayValue);
-		logger.info("Selecting year of birth..");
-		WebDriverUtils.selectVisibleText(driver, yearSelectUS, dayValue);
-	}
 
 	public void savePreferencesClick() {
 		WebDriverUtils.clickOnElementWithWait(driver, savePreferencesButton);

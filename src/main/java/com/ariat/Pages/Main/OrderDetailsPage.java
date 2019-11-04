@@ -16,7 +16,6 @@ public class OrderDetailsPage extends BasePage {
 
 	private By returnToMyOrdersLink = By.xpath("//a[text()='Return to My Orders']");
 	private By myOrdersText = By.xpath("//*contains[text(),'My orders']");
-	private By createReturnButton = By.xpath("//form[@id='newreturn']/button");
 	private By backToMyOrdersLink = By.xpath("//*[@id=\"main\"]/div/div[1]/div/a/span[2]");
 
 	public OrderDetailsPage(WebDriver driver) {
