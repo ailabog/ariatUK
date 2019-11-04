@@ -209,5 +209,4 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, buyNowBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-	
 }
