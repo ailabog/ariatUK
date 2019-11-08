@@ -2,7 +2,6 @@ package com.ariat.Tests.HeaderAndFooter.Countries;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -35,7 +34,7 @@ public class HeaderAndFooterUKTest extends BaseTest{
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-	@Test(priority=0)
+	@Test
 	public void UKHeader() {
 		logger.info("Starting the check for Header UK elements:");
 		homePage = new HomePage(new ChromeDriver());
@@ -48,13 +47,9 @@ public class HeaderAndFooterUKTest extends BaseTest{
 
 	@AfterTest
 	public void clearBrowserSession() {
+		homePage.quit();
+		homePageUK.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
     }
-
-	@AfterSuite
-	public void tearDown() {
-		homePage.quit();
-		homePageUK.quit();
-	}
 }

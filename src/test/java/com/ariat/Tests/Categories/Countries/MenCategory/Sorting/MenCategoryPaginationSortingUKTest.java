@@ -59,15 +59,10 @@ public class MenCategoryPaginationSortingUKTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterTest
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		menCategoryPage.quit();
-		
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

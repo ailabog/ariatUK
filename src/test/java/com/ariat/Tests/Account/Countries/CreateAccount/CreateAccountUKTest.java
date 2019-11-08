@@ -2,7 +2,6 @@ package com.ariat.Tests.Account.Countries.CreateAccount;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -120,16 +119,12 @@ public class CreateAccountUKTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();
 		createAccountPage.quit();
 		myAccountPage.quit();
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

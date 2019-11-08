@@ -1,7 +1,6 @@
 package com.ariat.Tests.Product.WomenCategory.Countries.AddToCart;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -45,7 +44,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
 
-    @Test(priority=0)
+    @Test
 	public void productPageWomenCategoryAddToCartTest() {
 		logger.info("Starting product page -> Women Category Gloves sub-category product glove add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -55,25 +54,22 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
+		myBagPage.removeProduct();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
     
     @AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
-		homePage.quit();
+    	homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
 		womenAccessoriesGlovesPage.quit();
 		glovesProductPage.quit();
 		myBagPage.quit();
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

@@ -47,16 +47,22 @@ public class CheckoutProcessPage extends BasePage {
 	private By promoCodeTxtBox = By.xpath("//input[@placeholder='Promo code']");
 	private By expandGiftCard = By.xpath("//i[text()='Gift card']");
 	private By expandPromoCode = By.xpath("//i[text()='Promo code']");
-	private By selectState = By.xpath("//span[text()='Arizona']");
 	private By checkoutBtn = By.xpath("//div[@data-funding-source='paypal']");
 	private By nextPaymentButton = By.cssSelector(".el-button > span > span");
-	private By useAddressAsItIsBtn = By.cssSelector(".ms-margin-bottom-10 > .el-button > span");
 	private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
 	private By signInLink = By.xpath("//a[text()='Sign In']");
+    private By arrowAddress= By.xpath("//i[@class='el-select__caret el-input__icon el-icon-arrow-up']");
+	
+	private By addressLocator = By.xpath("//span[contains(text(), 'Ekecw - Basarabia Blvd, No 62')]");
 	
 
 	public CheckoutProcessPage(WebDriver driver) {
 		super(driver);
+	}
+	
+	public void selectAddress() {
+		WebDriverUtils.clickOnElementWithWait(driver, arrowAddress);
+		WebDriverUtils.clickOnElementWithWait(driver, addressLocator);
 	}
 
 	public void clickEditBag() {
@@ -101,14 +107,6 @@ public class CheckoutProcessPage extends BasePage {
 		}
 	}
 
-	public void selectState() {
-		logger.info("Selecting state..");
-		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, selectState);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
 	public void enterFName(String nameValue) {
 		logger.info("Entering first name..");
 		WebDriverUtils.enterTextBox(driver, firstName, nameValue);
@@ -117,11 +115,6 @@ public class CheckoutProcessPage extends BasePage {
 
 	public void closeWindowAddress() {
 		WebDriverUtils.clickOnElementWithWait(driver, closeWindowAddressBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void useAddressAsItIs() {
-		WebDriverUtils.clickOnElementWithWait(driver, useAddressAsItIsBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 

@@ -1,11 +1,9 @@
 package com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Pages.HomePagesCountries.HomePage;
@@ -14,7 +12,6 @@ import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenRidingPage;
-import com.ariat.Pages.Categories.WomenCategories.WomenFashionSubcategory.WomenFashionSneakersPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearCountrySubcategories.WomenFootwearCountryFashionPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearCountrySubcategories.WomenFootwearCountryRubberPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearCountrySubcategories.WomenFootwearCountryToolBootsPage;
@@ -27,7 +24,6 @@ import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearRid
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearRidingSubcategories.WomenFootwearRidingToolBootsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearWesternSubcategories.WomenFootwearWesternFashionPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwear.WomenFootwearWesternSubcategories.WomenFootwearWesternPerformancePage;
-import com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearCasualShoesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenFootwearCountry.WomenFootwearCountrySubcategories.WomenFootwearWesternPage;
 
 
@@ -64,9 +60,7 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 	private WomenFootwearWesternPerformancePage womenFootwearWesternPerformancePage;
 	private WomenFootwearWesternFashionPage womenFootwearWesternFashionPage;
 
-	private WomenFootwearCasualShoesPage womenFootwearCasualShoesPage;
-	private WomenFashionSneakersPage womenFootwearSneakersPage;
-	private WomenFootwearCasualShoesPage womenFootwearCasual;
+	
 
 	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
     public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
@@ -127,12 +121,6 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();
@@ -155,5 +143,7 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 		womenFootwearWesternPage.quit();
 		womenFootwearWesternPerformancePage.quit();
 		womenFootwearWesternFashionPage.quit();
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

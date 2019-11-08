@@ -46,7 +46,7 @@ public class SignInPage extends BasePage {
 	private By checkStatusButton = By.name("dwfrm_ordertrack_findorder");
 	private By errPassMsg = By.xpath("//*[@id=\"dwfrm_login\"]/div[1]");
 
-	private By createAccountButton = By.name("dwfrm_login_register");
+	private By createAccountButton = By.id("dwfrm_login_register");
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
 	private By errorMessageText = By.className("error-form");

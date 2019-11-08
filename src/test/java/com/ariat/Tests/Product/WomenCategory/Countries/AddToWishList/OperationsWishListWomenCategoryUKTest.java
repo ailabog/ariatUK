@@ -1,7 +1,6 @@
 package com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -70,7 +69,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.sendListToAFriend("Ana", "aila.bogasieru@yahoo.com");
 		logger.info("Finishing product page -> Women Category Add to WishList & share it to a friend test.");
@@ -90,7 +89,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.setPriorityWishList("Medium");
 		myWishListPage.increaseQtyWishList(3);
@@ -115,7 +114,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
 		//logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
@@ -136,19 +135,13 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage.removeItemWishList();
 		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test.");
 	}
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();
@@ -156,5 +149,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		womenClothingTopsAndTshirtsPage.quit();
 		myWishListPage.quit();
 		glovesProductPage.quit();
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }

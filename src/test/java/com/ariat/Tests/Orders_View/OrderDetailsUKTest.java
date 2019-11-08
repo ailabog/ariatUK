@@ -1,7 +1,6 @@
 package com.ariat.Tests.Orders_View;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -91,16 +90,12 @@ public class OrderDetailsUKTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
+		homePage.quit();
+		homePageUK.quit();
+		signInPage.quit();
+		myAccountPage.quit();
+		orderDetailsPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
     }
-
-	@AfterSuite
-	public void tearDown() {
-	homePage.quit();
-	homePageUK.quit();
-	signInPage.quit();
-	myAccountPage.quit();
-	orderDetailsPage.quit();
-   }
 }

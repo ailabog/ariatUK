@@ -84,7 +84,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
 		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("6.5");
+		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList being logged test.");
 	} 

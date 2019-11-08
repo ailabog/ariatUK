@@ -30,18 +30,7 @@ public class CheckoutProcessCompletePage extends BasePage{
 	private By myAccountText = By.xpath("//h1[text()='My account']");
 	private By errorMsgPlaceOrder = By.xpath("//div[@class='opc-error-msg el-col el-col-12']");
 	private By buyNowBtn = By.xpath("//*[@id=\"paymentbtncs\"]");
-	private By pressPayPalCheckout = By.xpath("//iframe[@class='zoid-component-frame zoid-visible']");
-	private By ibanSofortField = By.name("data[BankCode][search]");
-	private By bankNameField = By.id("BankCodeSearch");
-	private By continueSofortBtn = By.xpath("//button[text()='Weiter']");
-	private By userIdSofortield = By.name("data[BackendForm][LOGINNAME__USER_ID]");
-	private By pinSofortField = By.id("BackendFormUSERPIN");
-	private By checkBankAccountSofort = By.name("data[MultipaysSession][sender_account_number_technical]");
-	private By transactionSofortField = By.id("BackendFormTAN");
-	private By continueSofortBE = By.xpath("//button[text()='Next']");
-	private By openSelectionIdeal = By.xpath("//span[text()='Open']");
-	private By IdealfinishBtn = By.xpath("//button[contains(text(),'Ga verder')]");
-	
+		
 
 	protected CheckoutProcessCompletePage(WebDriver driver) {
 		super(driver);
@@ -89,59 +78,10 @@ public class CheckoutProcessCompletePage extends BasePage{
 		WebDriverUtils.clickOnElementWithWait(driver, itemText);
 	}
 	
-	public void pressPayPalCheckout() {
-		WebDriverUtils.clickOnElementWithWait(driver, pressPayPalCheckout);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
 	public void assertErrMsgOrderNotPlaced(String expectedErrorMsg) {
 		logger.info("Check that error message is diplayed..");
 		String errMsg = WebDriverUtils.getElementText(driver, errorMsgPlaceOrder);
 		assertEquals(errMsg, expectedErrorMsg, "Error message with not being placed the order is displayed");
-	}
-	
-	public void enterIbanSofort(String iban) {
-		logger.info("Entering IBAN..");
-		WebDriverUtils.enterTextBox(driver, ibanSofortField, iban);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-	
-	public void continueSofort() {
-		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-	public void continueSofortBE() {
-		WebDriverUtils.clickOnElementWithWait(driver, continueSofortBE);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-	public void enterBankSofort(String bankName) {
-		WebDriverUtils.enterTextBox(driver, bankNameField, bankName);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-	public void enterValuesId(String userIdValue, String pinValue) {
-		WebDriverUtils.enterTextBox(driver, userIdSofortield, userIdValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, pinSofortField, pinValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-	public void checkBankAccount() {
-		WebDriverUtils.clickOnElementWithWait(driver, checkBankAccountSofort);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-	
-		public void enterTransactionId(String transactionId) {
-		WebDriverUtils.enterTextBox(driver, transactionSofortField, transactionId);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-	
-	public void chooseOpen() {
-		WebDriverUtils.clickOnElementWithWait(driver, openSelectionIdeal);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, IdealfinishBtn);
 	}
 	
 	

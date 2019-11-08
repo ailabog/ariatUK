@@ -28,7 +28,7 @@ public class HomePage extends BasePage {
 	private By chooseLocationArrow = By.xpath("//*[@id=\"chooserTriggerHeader\"]/span/span");
 	private By listCountries = By.xpath("//*[@id=\"contextChooser\"]/ul[1]");
 	private By countrySelectorWindow = By.xpath("//span[@class='icon icon-full-arrow-down ms_desktop-only']");
-	
+
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
@@ -48,7 +48,6 @@ public class HomePage extends BasePage {
 		logger.info("Selecting EU  Ariat store country...");
 
 		switch (euCountry.getCountryName()) {
-
 		// Jenkins version
 		case "(United Kingdom)":
 			logger.info("I choose English United Kingdom as location");
