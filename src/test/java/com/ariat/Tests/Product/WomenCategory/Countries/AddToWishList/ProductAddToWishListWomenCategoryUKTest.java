@@ -2,7 +2,6 @@ package com.ariat.Tests.Product.WomenCategory.Countries.AddToWishList;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -153,12 +152,6 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	
 	@AfterTest
 	public void clearBrowserSession() {
-		KillChrome kill = new KillChrome();
-		kill.killChrome();
-    }
-
-	@AfterSuite
-	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();
@@ -169,5 +162,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		glovesProductPage.quit();
 		myWishListPage.quit();
 	   createAccountPage.quit();
-	}
+		KillChrome kill = new KillChrome();
+		kill.killChrome();
+    }
 }
