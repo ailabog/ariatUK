@@ -35,14 +35,10 @@ public class MenCategoryPage extends BasePage{
     private By menAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By menFeaturedCategory = By.xpath("//a[contains(text(),'Featured')]");
     private By menFeaturedCategoryFR = By.xpath("//a[contains(text(),'Featured')])[2]");
-    
-  
     private By menFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-  
     private By menCategory = By.xpath("//a[contains(text(),'Men')]");
     private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By menCategoryDE = By.xpath("//a[contains(text(),'Herren')]");
-    
     private By footwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
     private By clothingCategoryLeftNav =By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
     private By accessoriesCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");
@@ -57,25 +53,10 @@ public class MenCategoryPage extends BasePage{
     private By westernTextLeftNav = By.xpath("//*[contains(text(),'Western']");
     private By fashionTextLeftNav = By.xpath("//*[contains(text(),'Fashion']");
     private By workTextLeftNav = By.xpath("//*[contains(text(),'Work']");
-    
     private By sortDropWomenCategoryUp = By.xpath("//div[@id='main']/div/div[2]/div[3]/div[2]/div/div/h3/p/span");
-    
-    //.ui-state-hover .icon-arrow-right
-    ////div[@id='main']/div/div[2]/div[3]/div[2]/div/div/h3/p/span
-    ////div[2]/div/div/h3/p/span
-	private By show36ItemLink = By.linkText("36 Items");
-	private By show72ItemLink = By.linkText("72 Items");
-	
-	private By show36ItemLinkDE = By.linkText("36 Artikel");
-	private By show72ItemLinkDE = By.linkText("72 Artikel");
-	private By show108ItemLinkDE = By.xpath("108 Artikel");
-	
-	private By show36ItemLinkFR = By.linkText("36 Articles");
-	private By show72ItemLinkFR = By.linkText("72 Articles");
-	private By show108ItemLinkFR = By.xpath("108 Articles");
-	
-	
+    private By show36ItemLink = By.linkText("36 Items");
 	private By show108ItemLink = By.linkText("108 Items");
+	private By show72ItemLink = By.linkText("72 Items");
 	private By show108ItemLinkDown = By.xpath("//*[@id=\"main\"]/div/div[2]/div[3]/div[2]/div[4]/div[3]/ul/li[3]/a");
 	private By nextPaginationButtonUp = By.xpath("//a[contains(text(),'Next')]");
 	private By prevPaginationButtonUp = By.cssSelector(".search-result-options:nth-child(1) > .pagination span");
@@ -87,10 +68,7 @@ public class MenCategoryPage extends BasePage{
 	private By priceHighToLowLink = By.linkText("Price (High to Low)");
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
 	private By bestSellersLink = By.linkText("Best Sellers");
-	private By bestSellersLinkFR = By.linkText("Meilleurs Ventes");
-	
-
-    
+	    
 	public MenCategoryPage(WebDriver driver) {
 		super(driver);
 	}
@@ -135,57 +113,24 @@ public class MenCategoryPage extends BasePage{
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
-	
-	public void sortProductWomenCategoryBestSellersFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, bestSellersLinkFR);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-	
+		
 	public void show36ItemsUp() {
 		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
-
+	
+	
 	public void show72ItemsUp() {
 		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 
+	
 	public void show108ItemLinkUp() {
 		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLink);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
-	public void show36ItemsUpDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLinkDE);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-
-	public void show72ItemsUpDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLinkDE);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-
-	public void show108ItemLinkUpDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLinkDE);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-	
-	public void show36ItemsUpFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, show36ItemLinkFR);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-
-	public void show72ItemsUpFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLinkFR);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-
-	public void show108ItemLinkUpFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, show108ItemLinkFR);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-
 
 	public void nextPaginationUp() {
 		WebDriverUtils.clickOnElementWithWait(driver, nextPaginationButtonUp);
@@ -209,11 +154,6 @@ public class MenCategoryPage extends BasePage{
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 
-	public void show72ItemsDown() {
-		WebDriverUtils.scrollDown(driver, show72ItemLink);
-		WebDriverUtils.clickOnElementWithWait(driver, show72ItemLink);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
 
 	public void show108ItemLinkDown() {
 		WebDriverUtils.scrollBottomPage(driver, show108ItemLinkDown);
@@ -248,20 +188,6 @@ public class MenCategoryPage extends BasePage{
 		return new MenFootwearPage(driver);
 	}
 	
-	public MenFootwearPage returnMenFootwearPageFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, menFootwearCategoryFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menFootwearText));
-		return new MenFootwearPage(driver);
-	}
-	
-	public MenFootwearPage returnMenFootwearPageDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, menFootwearCategoryDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menFootwearText));
-		return new MenFootwearPage(driver);
-	}
-	
 	public MenClothingPage returnMenClothingCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menClothingCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
@@ -269,21 +195,7 @@ public class MenCategoryPage extends BasePage{
 		return new MenClothingPage(driver);
 	}
 	
-	public MenClothingPage returnMenClothingCategoryPageFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, menClothingCategoryFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menClothingText));
-		return new MenClothingPage(driver);
-	}
-	
-	public MenClothingPage returnMenClothingCategoryPageDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, menClothingCategoryDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menClothingText));
-		return new MenClothingPage(driver);
-	}
-	
-	public MenAccessoriesPage returnMenAccessoriesCategoryPage() {
+		public MenAccessoriesPage returnMenAccessoriesCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menAccesoriesCategory);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesText));

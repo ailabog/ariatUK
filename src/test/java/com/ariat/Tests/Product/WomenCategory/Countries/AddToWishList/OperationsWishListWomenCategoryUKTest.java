@@ -76,31 +76,6 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void productPageWomenCategoryAddToWishListDifferentActionsTest() {
-		logger.info("Starting product page -> Women Category Add to Wishlist & different actions test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
-		signInPage.returningPassword("Parola12345!");
-		myAccountPage = signInPage.returnMyAccountPage();
-		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
-		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
-		myWishListPage = glovesProductPage.returnMyWishListPage();
-		myWishListPage.setPriorityWishList("Medium");
-		myWishListPage.increaseQtyWishList(3);
-		myWishListPage.decreaseQtyWishList(2);
-		myWishListPage.editItemWishList();
-		glovesProductPage.update();
-		// myWishListPage.goBackFromEditToWishlist();
-		logger.info("Finishing product page -> Women Category Add to WishList  & different actions test.");
-	}
-
-	@Test(priority = 2)
 	public void productPageWomenCategoryAddToWishListAddToCartTest() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -117,29 +92,12 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		glovesProductPage.selectAttributeSize("7");
 		myWishListPage = glovesProductPage.returnMyWishListPage();
 		myWishListPage.addToCartItemWishList();
+		myWishListPage.removeProduct();
 		//logger.info("Finishing product page -> Women Category Add to WishList& add to cart test."
 		//+ homePageUK.minicartShow());
 	}
 
-	@Test(priority = 3)
-	public void productPageWomenCategoryAddToWishListRemoveItemTest() {
-		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
-		homePage = new HomePage(new ChromeDriver());
-		homePage.load(environment.DEVELOPMENT.getURL());
-		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
-		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
-		signInPage.returningPassword("Parola12345!");
-		myAccountPage = signInPage.returnMyAccountPage();
-		womenCategoryPage = homePageUK.returnWomenCategoryPage();
-		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
-		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
-		glovesProductPage.selectAttributeSize("7");
-		myWishListPage.removeItemWishList();
-		logger.info("Finishing product page -> Women Category Add to WishList& add to cart test.");
-	}
-	
+		
 	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();

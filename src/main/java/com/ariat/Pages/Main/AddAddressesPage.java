@@ -86,12 +86,6 @@ public class AddAddressesPage extends BasePage {
 	
 	}
 	
-	public void selectState(String state) {
-		logger.info("Selecting state: ");
-		WebDriverUtils.selectDropDown(driver, stateBox, state);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		
-	}
 
 	public void enterPostCode(String zip) {
 		logger.info("Entering poste code: ");

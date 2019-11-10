@@ -41,15 +41,6 @@ public class EmailPreferencePage extends BasePage {
 	private By monthSelect = By.id("dwfrm_profile_customer_customProfile_birthdayMonth");
 	private By daySelect = By.id("dwfrm_profile_customer_customProfile_birthdayDay");
 	
-	private By emailTxtBoxUS = By.id("ctl00_cphContent_txtEmail");
-	private By confirmEmailTxtBoxUS = By.id("ctl00_cphContent_txtConfirmEmail");
-	private By fNameTxtBoxUS = By.id("ctl00_cphContent_firstname");
-	private By lNameTxtBoxUS = By.id("ctl00_cphContent_lastname");
-	private By genderCheckUS = By.id("ctl00_cphContent_Female");
-	private By monthSelectUS = By.id("ctl00_cphContent_ddlBMonth");
-	private By daySelectUS = By.id("ctl00_cphContent_ddlBDay");
-	private By yearSelectUS = By.id("ctl00_cphContent_ddlBYear");
-	private By saveprefBtn = By.xpath("//input[@value='SAVE PREFERENCES']");
 
 	public EmailPreferencePage(WebDriver driver) {
 		super(driver);

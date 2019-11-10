@@ -21,8 +21,6 @@ public class MyWishListPage extends BasePage {
 	private static final Logger logger = LoggerFactory.getLogger(MyWishListPage.class);
 
 	private By sendToAFriendButton = By.xpath("//a[@title='Send to a Friend']");
-	private By sendToAFriendButtonDE = By.xpath("//a[@title='Meine Wunschliste teilen']");
-	private By sendToAFriendButtonFR = By.xpath("//a[@title='Envoyer à un ami']");
 	private By nameTxtBox = By.id("dwfrm_sendtofriend_friendsname");
 	private By emailFriendTextBox = By.id("dwfrm_sendtofriend_friendsemail");
 	private By shareEmailListButton = By.name("dwfrm_sendtofriend_send");
@@ -42,11 +40,17 @@ public class MyWishListPage extends BasePage {
 	private By goBackToWishListEdit = By.cssSelector("span.ui-icon.ui-icon-closethick");
     
     private By noIteminWishListText = By.xpath("//*[contains[text(), 'You have no items on your wishlist.']");
+    private By removeLink = By.linkText("Remove");
    
     private boolean noItemWishList;
     
     public MyWishListPage(WebDriver driver) {
 		super(driver);
+	}
+    
+    public void removeProduct() {
+		WebDriverUtils.clickOnElementWithWait(driver, removeLink);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
 	public void sendListToAFriend(String nameFrined, String email) {
@@ -61,31 +65,7 @@ public class MyWishListPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 	
-	public void sendListToAFriendFR(String nameFrined, String email) {
-		logger.info("Sending my wish list to a friend");
-		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButtonFR);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, nameTxtBox, nameFrined);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, emailFriendTextBox, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, shareEmailListButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	
-	}
-	
-	public void sendListToAFriendDE(String nameFrined, String email) {
-		logger.info("Sending my wish list to a friend");
-		WebDriverUtils.clickOnElementWithWait(driver, sendToAFriendButtonDE);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, nameTxtBox, nameFrined);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, emailFriendTextBox, email);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, shareEmailListButton);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
 	public void closeSendToAFriend() {
 		logger.info("Closing the sharing wish list with a friend window");
 		WebDriverUtils.clickOnElement(driver, closeSendFriendButton);

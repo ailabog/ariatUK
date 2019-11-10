@@ -49,8 +49,33 @@ public class DeleteAddressUKTest extends BaseTest {
 	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
 	}
-	@Test
-	public void deleteAddressUKTest() {
+	
+	@Test(priority=0)
+	public void addAddressUKTest() {
+		logger.info("Starting add address UK test");
+		homePage = new HomePage(new ChromeDriver());
+		homePage.load(environment.DEVELOPMENT.getURL());
+		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+		signInPage = homePageUK.returnSignInPage();
+		signInPage.returningCustomer(EMAIL, "EnglishUK");
+		signInPage.returningPassword(PASSWORD);
+		myAccountPage = signInPage.returnMyAccountPage();
+		addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
+		addAddressPage.enterFName("A");
+		addAddressPage.enterLName("B");
+		addAddressPage.enterAddress1("Oxford Street");
+		addAddressPage.enterCity(CITY);
+		addAddressPage.selectCountry("United Kingdom");
+		addAddressPage.enterPostCode(POST_CODE);
+		addAddressPage.enterPhone(PHONE);
+		addAddressPage.enterAddressId(ADDRESS_ID);
+		addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
+		addressesPage.checkAddress(ADDRESS_ID);
+		logger.info("Finishing add address UK test");
+	}
+	
+	@Test(priority=1)
+	public void deleteAddressTestUK() {
 		logger.info("Starting deleting address UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -60,10 +85,35 @@ public class DeleteAddressUKTest extends BaseTest {
 		signInPage.returningPassword(PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
-		addressesPage.deleteAddressCreatedNo("nnn");
-		addressesPage.deleteAddressCreatedYes("nn");
+		addressesPage.deleteAddressCreatedNo(ADDRESS_ID);
+		addressesPage.deleteAddressCreatedYes(ADDRESS_ID);
 		logger.info("Finishing deleting address UK test");
 	}
+	
+	@Test(priority=2)
+	public void addAddressUKTestAfterDeletionUK() {
+			logger.info("Starting add address UK test");
+			homePage = new HomePage(new ChromeDriver());
+			homePage.load(environment.DEVELOPMENT.getURL());
+			homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
+			signInPage = homePageUK.returnSignInPage();
+			signInPage.returningCustomer(EMAIL, "EnglishUK");
+			signInPage.returningPassword(PASSWORD);
+			myAccountPage = signInPage.returnMyAccountPage();
+			addAddressPage = myAccountPage.returnAddAddressesPageMiddleNav();
+			addAddressPage.enterFName("A");
+			addAddressPage.enterLName("B");
+			addAddressPage.enterAddress1("Oxford Street");
+			addAddressPage.enterCity(CITY);
+			addAddressPage.selectCountry("United Kingdom");
+			addAddressPage.enterPostCode(POST_CODE);
+			addAddressPage.enterPhone(PHONE);
+			addAddressPage.enterAddressId(ADDRESS_ID);
+			addressesPage = addAddressPage.returnAddressesPageWithoutScroll();
+			addressesPage.checkAddress(ADDRESS_ID);
+			logger.info("Finishing add address UK test");
+		}
+	
 
 	@AfterTest
 	public void clearBrowserSession() {
