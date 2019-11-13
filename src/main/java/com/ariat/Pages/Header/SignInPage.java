@@ -50,7 +50,7 @@ public class SignInPage extends BasePage {
 	private By createAccountTitle = By.xpath("//*id='main']/div/div/div/div[1]/h1");
 	private By myAccountText = By.xpath("//*[contains(text(), 'My account']");
 	private By errorMessageText = By.className("error-form");
-	private By closeButton = By.className("close-button");
+	private By closeButton = By.xpath("//a[@class='ui-dialog-titlebar-close ui-corner-all']");
 	private By orderDetailsText = By.xpath("//*[contains[text(),'Order Details']");
 
 

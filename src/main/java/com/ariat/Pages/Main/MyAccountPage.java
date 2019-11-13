@@ -51,7 +51,7 @@ public class MyAccountPage extends BasePage {
 	private By editPaymentInfoLink = By.xpath("//*[@id=\"main\"]/div/div[2]/div/div/div/div[2]/div[4]/div[1]/a");
 	private By addCardLink = By.xpath("//a[text()='Add Card']");
 	private By viewAllOrdersLink = By.cssSelector(".myaccount-container__my-orders .myaccount-container__box-link");
-	private By viewAllWishListLink = By.xpath("(//a[contains(text(),'View all')])[59]");
+	private By viewAllWishListLink = By.cssSelector(".myaccount-container__wishlist .myaccount-container__box-link");
 	private By addressesTextfromAddAddresses = By.xpath("//*[contains(text(),'Addresses']");
 	private By addCreditCardText = By.xpath("//*[contains(text(),'Add a credit card']");
 	private By myEmailPrefText = By.xpath("//*[contains(text(),'Email preferences']");

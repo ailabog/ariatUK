@@ -123,7 +123,6 @@ public class CreateAccountUKTest extends BaseTest {
 		homePageUK.quit();
 		signInPage.quit();
 		createAccountPage.quit();
-		myAccountPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
     }
