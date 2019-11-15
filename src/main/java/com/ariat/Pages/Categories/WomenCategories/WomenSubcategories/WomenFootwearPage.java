@@ -26,18 +26,12 @@ import com.ariat.Utils.WebDriverUtils;
 public class WomenFootwearPage extends BasePage{
 	
 	private By womenFootwearRidingCategory = By.linkText("Riding");
-	private By womenFootwearRidingCategoryFR = By.linkText("Equitation");
-	
 	private By womenFootwearRidingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearCountryCategory = By.linkText("Country");
-	private By womenFootwearCountryCategoryFR = By.linkText("Campagne");
-	
 	private By womenFootwearCountryText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFootwearWesternCategory = By.linkText("Western");
     private By womenFootwearWesternText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By womenFootwearCasualShoesCategory = By.xpath("//a[contains(text(),'Casual Shoes')])[2]");
-    private By womenFootwearCasualShoesCategoryFR = By.linkText("Chaussures de loisir");
-    private By womenFootwearCasualShoesCategoryDE = By.linkText("Freizeitschuhe");
     private By casualShoesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By womenCategory = By.linkText("//a[contains(text(),'Women')]");
     private By menFootwearRidingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
@@ -59,12 +53,6 @@ public class WomenFootwearPage extends BasePage{
 		return new WomenFootwearRidingPage(driver);
 	}
 	
-	public WomenFootwearRidingPage returnWomenFootwearRidingCategoryPageFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearRidingCategoryFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(womenFootwearRidingText));
-		return new WomenFootwearRidingPage(driver);
-	}
 	
 	public WomenFootwearCountryPage returnWomenFootwearCountryCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCountryCategory);
@@ -73,12 +61,6 @@ public class WomenFootwearPage extends BasePage{
 		return new WomenFootwearCountryPage(driver);
 	}
 	
-	public WomenFootwearCountryPage returnWomenFootwearCountryCategoryPageFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCountryCategoryFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(womenFootwearCountryText));
-		return new WomenFootwearCountryPage(driver);
-	}
 	
 	public WomenFootwearWesternPage returnWomenFootwearWesternCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearWesternCategory);
@@ -94,20 +76,7 @@ public class WomenFootwearPage extends BasePage{
 		return new WomenFootwearCasualShoesPage(driver);
 	}
 	
-	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesCategoryPageFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCasualShoesCategoryFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(casualShoesText));
-		return new WomenFootwearCasualShoesPage(driver);
-	}
 	
-	public WomenFootwearCasualShoesPage returnWomenFootwearCasualShoesCategoryPageDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, womenFootwearCasualShoesCategoryDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(casualShoesText));
-		return new WomenFootwearCasualShoesPage(driver);
-	}
-
 	public WomenRidingPage returnWomennRidingCategoryPageLeftNav() {
 			WebDriverUtils.clickOnElementWithWait(driver, footwearRidingCategoryLeftNav);
 			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_60_SECONDS,

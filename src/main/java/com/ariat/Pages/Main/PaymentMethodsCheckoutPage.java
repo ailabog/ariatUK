@@ -35,7 +35,6 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By reviewOrderBtn = By.id("paymentbtncs");
 	private By typeCardLocator = By.id("c-ct");
 	private By idealBtn = By.xpath("//span[contains(text(), 'iDeal')]");
-	
 	private By arrowExpMonth = By.cssSelector(".el-form-item:nth-child(7) .el-select__caret");
 	private By arrowExpYear = By.cssSelector(".el-form-item:nth-child(8) .el-select__caret");
 	private By buyNowBtn = By.id("confirmpayment");

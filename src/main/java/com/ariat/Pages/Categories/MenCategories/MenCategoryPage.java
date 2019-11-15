@@ -23,22 +23,15 @@ import com.ariat.Utils.WebDriverUtils;
 public class MenCategoryPage extends BasePage{
 	
 	private By menFootwearCategory = By.xpath("(//a[contains(text(),'Footwear')])[2]");
-    private By menFootwearCategoryDE = By.linkText("Schuhe");
-    private By menFootwearCategoryFR = By.xpath("//a[contains(text(),'Bottes et boots')])[2]");
-	private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
+    private By menFootwearText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By menClothingCategory = By.xpath("//a[contains(text(),'Clothing')]");
-	private By menClothingCategoryFR = By.xpath("//a[contains(text(),'Vêtements')])[3]");
-	private By menClothingCategoryDE = By.xpath("(//a[contains(text(),'Bekleidung')])[2]");
 	private By menClothingText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By menAccesoriesCategory = By.xpath("//a[contains(text(),'Accessories')]");
-    private By menAccesoriesCategoryFR = By.xpath(" //a[contains(text(),'Accessoires')])[3]");
     private By menAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
     private By menFeaturedCategory = By.xpath("//a[contains(text(),'Featured')]");
-    private By menFeaturedCategoryFR = By.xpath("//a[contains(text(),'Featured')])[2]");
     private By menFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
     private By menCategory = By.xpath("//a[contains(text(),'Men')]");
     private By menText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-    private By menCategoryDE = By.xpath("//a[contains(text(),'Herren')]");
     private By footwearCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[1]/a");
     private By clothingCategoryLeftNav =By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
     private By accessoriesCategoryLeftNav = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[3]/a");
@@ -75,11 +68,6 @@ public class MenCategoryPage extends BasePage{
 	
 	public void menCategory() {
 		WebDriverUtils.moveToElement(driver, menCategory);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
-	}
-	
-	public void menCategoryDE() {
-		WebDriverUtils.moveToElement(driver, menCategoryDE);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	}
 	
@@ -202,22 +190,9 @@ public class MenCategoryPage extends BasePage{
 		return new MenAccessoriesPage(driver);
 	}
 	
-	public MenAccessoriesPage returnMenAccessoriesCategoryPageFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, menAccesoriesCategoryFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menAccessoriesText));
-		return new MenAccessoriesPage(driver);
-	}
 	
 	public MenFeaturedPage returnMenFeaturedCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, menFeaturedCategory);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(menFeaturedText));
-		return new MenFeaturedPage(driver);
-	}
-	
-	public MenFeaturedPage returnMenFeaturedCategoryPageFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, menFeaturedCategoryFR);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(menFeaturedText));
 		return new MenFeaturedPage(driver);

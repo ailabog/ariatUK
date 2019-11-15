@@ -50,5 +50,4 @@ public class WomenFeaturedPage extends BasePage{
 				ExpectedConditions.invisibilityOfElementLocated(womenWarmWeatherRidingCategoryText));
 		return new WomenFeaturedWarmWeatherRidingPage(driver);
 	}
-	
 }

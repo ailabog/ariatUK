@@ -18,9 +18,7 @@ import com.ariat.Utils.WebDriverUtils;
 
 public class WomenClothingTopsAndTshirtsPage extends BasePage {
 
-	private By topsTshirtProductDE = By.xpath("//img[contains(@title, 'Tri Factor 1/4 Zip Baselayer')]");
-	private By topTshirtText = By.xpath("//*contains[text(), 'Tri Factor 1/4 Zip Top']");
-	private By topsTshirtProductFR = By.xpath("//img[contains(@title, 'Tri Factor 1/4 Zip Top')]");
+	
 	private By rebarTShirt = By.xpath("//img[@alt='Rebar Sunstopper Top']");
 	private By rebarTShirtText = By.xpath("//*contains[text(), 'Rebar Sunstopper Top']");
 	
@@ -28,21 +26,7 @@ public class WomenClothingTopsAndTshirtsPage extends BasePage {
 		super(driver);
 	}
 
-	public TriFactorTopProductPage returnTriFactorTopProductPageDE() {
-		WebDriverUtils.clickOnElementWithWait(driver, topsTshirtProductDE);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(topTshirtText));
-		return new TriFactorTopProductPage(driver);
-	}
-	
-	public TriFactorTopProductPage returnTriFactorTopProductPageFR() {
-		WebDriverUtils.clickOnElementWithWait(driver, topsTshirtProductFR);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(topTshirtText));
-		return new TriFactorTopProductPage(driver);
-
-	}
-	
+		
 	public RebarTopProductPage returnRebarToptPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, rebarTShirt);
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_40_SECONDS,

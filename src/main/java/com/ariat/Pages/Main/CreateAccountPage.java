@@ -171,25 +171,21 @@ public class CreateAccountPage extends BasePage {
 		logger.info("Choosing Male option:");
 		WebDriverUtils.clickOnElementWithWait(driver, MaleRadio);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_40_SECONDS);
-	
 	}
 
 	public void rideYes() {
 		logger.info("Choose I ride");
 		WebDriverUtils.clickOnElementWithWait(driver, rideYes);
-		
 	}
 
 	public void rideNo() {
 		logger.info("Choose I don't ride");
 		WebDriverUtils.clickOnElementWithWait(driver, rideNo);
-		
 	}
 
 	public void productsWesternCheck() {
 		logger.info("Check Western products");
 		WebDriverUtils.clickOnElementWithWait(driver, checkWestern);
-	
 	}
 
 	public void productsFashionCheck() {
