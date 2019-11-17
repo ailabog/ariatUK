@@ -62,7 +62,7 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void checkoutCreateNewOrderBeingLoggedMasterCard() {
+	public void checkoutCreateNewOrderBeingLoggedMasterCardUK() {
 		logger.info("Starting checkout -> create new order being logged credit card Master Card test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -89,7 +89,7 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void checkoutCreateNewOrderBeingLoggedVisa() {
+	public void checkoutCreateNewOrderBeingLoggedVisaUK() {
 		logger.info("Starting checkout -> create new order being logged credit card Visa test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

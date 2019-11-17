@@ -45,7 +45,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 	}
 
     @Test
-	public void productPageWomenCategoryAddToCartTest() {
+	public void productPageWomenCategoryAddToCartTestUK() {
 		logger.info("Starting product page -> Women Category Gloves sub-category product glove add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

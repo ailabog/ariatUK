@@ -36,7 +36,7 @@ public class WomenCategoryPaginationSortingUKTest extends BaseTest {
 	}
 
 	@Test
-	public void navigateWomenCategory() {
+	public void navigateWomenCategoryUK() {
 		logger.info("Starting sort and navigate pagination test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

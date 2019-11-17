@@ -70,7 +70,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	}
 
 	@Test(priority=0)
-	public void productPageWomenCategoryAddToWishListLoggedTest() {
+	public void productPageWomenCategoryAddToWishListLoggedTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist being logged test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -89,7 +89,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	} 
 	
     @Test(priority=1)
-	public void productPageWomenCategoryAddToWishListNotLoggedTest() {
+	public void productPageWomenCategoryAddToWishListNotLoggedTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist not being logged test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -107,7 +107,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	}
 	
 	@Test(priority=2)
-	public void productPageWomenCategoryAddToWishListCreateAccountTest() {
+	public void productPageWomenCategoryAddToWishListCreateAccountTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist create account test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -132,7 +132,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	} 
 	
 	@Test(priority=3)
-	public void productPageWomenCategoryFindSomeoneWishListTest() {
+	public void productPageWomenCategoryFindSomeoneWishListTestUK() {
 		logger.info("Starting product page -> Women Category find someone's WishList test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

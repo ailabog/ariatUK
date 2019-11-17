@@ -45,7 +45,7 @@ public class PersonalInformationUKTest extends BaseTest {
 	}
 
 	@Test
-	public void updatePersonalInformationTest() {
+	public void updatePersonalInformationTestUK() {
 		logger.info("Starting update personal information test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

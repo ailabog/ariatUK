@@ -83,7 +83,7 @@ public class WomenCategoriesAndSubcategoriesTopNavUKTest extends BaseTest {
 	}
 
 	@Test
-	public void navigateWomenClothingCategoriesTest() {
+	public void navigateWomenClothingCategoriesTestUK() {
 		logger.info("Starting navigate Women Clothing sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

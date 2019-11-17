@@ -56,7 +56,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void productPageWomenCategoryAddToWishListShareToAFriendTest() {
+	public void productPageWomenCategoryAddToWishListShareToAFriendTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & share it to a friend test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -76,7 +76,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void productPageWomenCategoryAddToWishListAddToCartTest() {
+	public void productPageWomenCategoryAddToWishListAddToCartTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

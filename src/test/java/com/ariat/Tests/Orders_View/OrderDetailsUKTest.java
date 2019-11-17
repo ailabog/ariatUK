@@ -44,7 +44,7 @@ public class OrderDetailsUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void ordersChecksViewAllOrdersTest() {
+	public void ordersChecksViewAllOrdersTestUK() {
 		logger.info("Starting order details checks - View all orders test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -60,7 +60,7 @@ public class OrderDetailsUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void orderChecksMyAccountMiddleNavTest() {
+	public void orderChecksMyAccountMiddleNavTestUK() {
 		logger.info("Starting order details checks - My account view test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -75,7 +75,7 @@ public class OrderDetailsUKTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void orderChecksMyAccountTopNavTest() {
+	public void orderChecksMyAccountTopNavTestUK() {
 		logger.info("Starting orders check information orders test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

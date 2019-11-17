@@ -43,7 +43,7 @@ public class OrderStatusUKTest extends BaseTest {
 	}
 
 	@Test
-	public void orderStatusTest() {
+	public void orderStatusTestUK() {
 		logger.info("Starting  order status test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

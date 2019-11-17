@@ -71,7 +71,7 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void leftNavigationWomenFootwearRidingSubcategories() {
+	public void leftNavigationWomenFootwearRidingSubcategoriesUK() {
 		logger.info("Starting left navigation Men Footwear Riding sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -89,7 +89,7 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void leftNavigationWomenFootwearCountrySubcategories() {
+	public void leftNavigationWomenFootwearCountrySubcategoriesUK() {
 		logger.info("Starting left navigation Men Footwear Country sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -105,7 +105,7 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void leftNavigationWomenFootwearWesternSubcategories() {
+	public void leftNavigationWomenFootwearWesternSubcategoriesUK() {
 		logger.info("Starting left navigation Men Footwear Western sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
