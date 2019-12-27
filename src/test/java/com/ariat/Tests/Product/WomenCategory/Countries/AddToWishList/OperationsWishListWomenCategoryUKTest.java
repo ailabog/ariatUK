@@ -62,8 +62,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails("aila.bogasieru@ariat.com", "EnglishUK", "Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
@@ -82,8 +81,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer("aila.bogasieru@ariat.com", "EnglishUK");
-		signInPage.returningPassword("Parola12345!");
+		signInPage.setLoginDetails("aila.bogasieru@ariat.com", "EnglishUK", "Parola12345!");
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();

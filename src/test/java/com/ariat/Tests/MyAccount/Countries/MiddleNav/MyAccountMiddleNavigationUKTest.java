@@ -47,8 +47,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPersonalInfoPageMiddleNav();
 		myAccountPage.myAccountClick();
@@ -65,8 +64,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnEmailPreferencePageMiddleNav();
 		myAccountPage.myAccountClick();
@@ -81,8 +79,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnAddressesPageMiddleNav();
 		myAccountPage.myAccountClick();
@@ -99,8 +96,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageMiddleNav();
 		myAccountPage.myAccountClick();
@@ -117,8 +113,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyOrdersPageViewAllMiddleNav();
 		myAccountPage.myAccountClick();
@@ -133,8 +128,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.returningCustomer(EMAIL, "EnglishUK");
-		signInPage.returningPassword(PASSWORD);
+		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyWishListPageViewAllMiddleNav();
 		myAccountPage.myAccountClick();

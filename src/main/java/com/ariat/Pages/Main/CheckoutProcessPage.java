@@ -106,45 +106,31 @@ public class CheckoutProcessPage extends BasePage {
 			throw new RuntimeException("Language" + optionCountry + "not supported");
 		}
 	}
+	
+	public void setInfoAccountSecureCheckoutUK(String nameValue, String lastValue, String addressValue, String cityValue, String zipCodeValue, String mobileValue, String emailValue)
+	 {
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, firstName, nameValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, lastName, lastValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, address, addressValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, city, cityValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+	WebDriverUtils.clickOnElementWithWait(driver, selectOption);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, zipCode, zipCodeValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, mobile, mobileValue);
+	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+	WebDriverUtils.enterTextBox(driver, email, emailValue);
+}
 
-	public void enterFName(String nameValue) {
-		logger.info("Entering first name..");
-		WebDriverUtils.enterTextBox(driver, firstName, nameValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
+	
 	public void closeWindowAddress() {
 		WebDriverUtils.clickOnElementWithWait(driver, closeWindowAddressBtn);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterLName(String lastValue) {
-		logger.info("Entering last name..");
-		WebDriverUtils.enterTextBox(driver, lastName, lastValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterAddress(String addressValue) {
-		logger.info("Entering address address..");
-		WebDriverUtils.enterTextBox(driver, address, addressValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterAddress1(String addressValue1) {
-		logger.info("Entering address1 name..");
-		WebDriverUtils.enterTextBox(driver, address1, addressValue1);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterCity(String cityValue) {
-		logger.info("Entering city name..");
-		WebDriverUtils.enterTextBox(driver, city, cityValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterZipCode(String zipCodeValue) {
-		logger.info("Entering zip code..");
-		WebDriverUtils.enterTextBox(driver, zipCode, zipCodeValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
@@ -154,17 +140,7 @@ public class CheckoutProcessPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	public void enterMobile(String mobileValue) {
-		logger.info("Entering mobile phone..");
-		WebDriverUtils.enterTextBox(driver, mobile, mobileValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
-
-	public void enterEmail(String emailValue) {
-		logger.info("Entering email..");
-		WebDriverUtils.enterTextBox(driver, email, emailValue);
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	}
+	
 
 	public void checkAddToAddressBox() {
 		logger.info("Checking add to address box..");

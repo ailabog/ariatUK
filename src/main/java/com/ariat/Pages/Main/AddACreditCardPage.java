@@ -2,6 +2,7 @@ package com.ariat.Pages.Main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,54 +30,29 @@ public class AddACreditCardPage extends BasePage {
 	private By applyButton = By.id("applyBtn");
 	private By cancelButton = By.xpath("//button[text()='Cancel]");
 	private By creditCardInfoText = By.xpath("//*contains[text(), 'Credit card information']");
+	
 
 	public AddACreditCardPage(WebDriver driver) {
 		super(driver);
 	}
-
-	public void enterCardId(String cardId) {
-		logger.info("Entering card id...");
+	
+	public void setDetailsCreditCard(String cardId, String cardOwner, String typeCard, String number, String cvs, String month, String year) {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, cardNickNameTextBox, cardId);
-	}
-
-	public void enterCardOwner(String cardOwner) {
-		logger.info("Entering card owner...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, nameOnTheCardTextBox, cardOwner);
-	}
-
-	public void selectTypeCard(String type) {
-		logger.info("Selecting the type of the card...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.selectDropDown(driver, typeCardSelect, type);
-
-	}
-
-	public void enterCardNo(String number) {
-		logger.info("Selecting the type of the card...");
+		WebDriverUtils.selectDropDown(driver, typeCardSelect, typeCard);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, cardNoTextBox, number);
-	}
-
-	public void selectExpirationMonthCard(String month) {
-		logger.info("Selecting expiration month card...");
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scroll350Down(driver, securityCodeText);
+		WebDriverUtils.enterTextBox(driver, securityCodeText, cvs);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.selectDropDown(driver, expirationMonthSelect, month);
-	}
-
-	public void selectExpirationYearCard(String year) {
-		logger.info("Selecting expiration year card...");
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.selectDropDown(driver, expirationYearSelect, year);
-	}
-
-	public void enterSecurityCode(String cvs) {
-		logger.info("Entering security code...");
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.enterTextBox(driver, securityCodeText, cvs);
-
-	}
+}
 
 	public void applyCardCreation() {
 		logger.info("Creating new credit card");
