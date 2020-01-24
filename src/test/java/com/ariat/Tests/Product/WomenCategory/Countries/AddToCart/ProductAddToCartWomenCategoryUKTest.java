@@ -35,15 +35,14 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 	private WomenAccessoriesPage womenAccessoriesPage;
 	private WomenAccessoriesGlovesPage womenAccessoriesGlovesPage;
 	private GlovesProductPage glovesProductPage;
-	
 
 	@BeforeTest
 	public void setSeleniumUP() {
-	SetSelenium setPath = new SetSelenium();
-	setPath.setSelenium();
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
-    @Test
+	@Test
 	public void productPageWomenCategoryAddToCartTestUK() {
 		logger.info("Starting product page -> Women Category Gloves sub-category product glove add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
@@ -51,17 +50,17 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage= womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
+		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		myBagPage.removeProduct();
 		logger.info("Finishing product page -> Women Category Gloves sub-category product glove add to cart test.");
 	}
-    
-    @AfterTest
+
+	@AfterTest
 	public void clearBrowserSession() {
-    	homePage.quit();
+		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();
 		womenAccessoriesPage.quit();
@@ -70,5 +69,5 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 		myBagPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

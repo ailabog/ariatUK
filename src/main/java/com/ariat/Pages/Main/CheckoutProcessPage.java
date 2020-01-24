@@ -122,8 +122,6 @@ public class CheckoutProcessPage extends BasePage {
 	case "UK":
 		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.scrolltoElement(driver, optionCountry.getLocator());
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
 	
 	case "Austria":

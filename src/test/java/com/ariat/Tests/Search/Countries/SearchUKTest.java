@@ -30,10 +30,10 @@ public class SearchUKTest extends BaseTest {
 
 	@BeforeTest
 	public void setSeleniumUP() {
-	SetSelenium setPath = new SetSelenium();
-	setPath.setSelenium();
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
-	
+
 	@Test
 	public void searchProductTestUK() {
 		logger.info("Starting search products UK test");
@@ -41,16 +41,16 @@ public class SearchUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		homePageUK.search(OPTION);
-	    homePageUK.assertProductDisplayed(MESSAGE+OPTION);
+		homePageUK.assertProductDisplayed(MESSAGE + OPTION);
 		homePageUK.seeAllproducts();
 		logger.info("Finishing search products UK test");
 	}
-	
+
 	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

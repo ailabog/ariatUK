@@ -79,9 +79,8 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.setInfoAccountSecureCheckout(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
-				CredentialsUtils.getProperty("email"), selectCountry.UK);
+				CredentialsUtils.getProperty("email"), selectCountry.AUSTRIA);
 		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		//paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
 		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(),
 				typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
@@ -104,7 +103,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		checkoutProcessPage.setInfoAccountSecureCheckout(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
-				CredentialsUtils.getProperty("email"), selectCountry.UK);
+				CredentialsUtils.getProperty("email"), selectCountry.AUSTRIA);
 		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.VISA.getNumber(),
 				typeCard.VISA.getCvs());
