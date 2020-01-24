@@ -48,7 +48,7 @@ public class HomePage extends BasePage {
 		logger.info("Selecting EU  Ariat store country...");
 
 		switch (euCountry.getCountryName()) {
-		// Jenkins version
+		/*Jenkins version
 		case "(United Kingdom)":
 			logger.info("I choose English United Kingdom as location");
 			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
@@ -64,6 +64,23 @@ public class HomePage extends BasePage {
 				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 				WebDriverUtils.clickOnElementWithWait(driver, euCountry.UK.getLocator());
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+			}
+			return new HomePageUK(driver);*/
+			
+			//local version
+		case "(United Kingdom)":
+			logger.info("I choose English United Kingdom as location");
+			WebDriverUtils.clickOnElementWithWait(driver, chooseLocationArrow);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+			if (WebDriverUtils.findElement(driver, countrySelectorWindow) != null) {
+				WebDriverUtils.clickOnElementWithWait(driver, listCountries);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.scrolltoElement(driver, euCountry.UK.getLocator());
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				logger.info("Saving location...");
+				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
+				WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+				WebDriverUtils.clickOnElementWithWait(driver, euCountry.UK.getLocator());
 			}
 			return new HomePageUK(driver);
 

@@ -12,8 +12,10 @@ import com.ariat.Pages.Main.AddressesPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Pages.Header.SignInPage;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 
 /**
@@ -38,14 +40,11 @@ public class LoadMoreAddressUKTest extends BaseTest {
 	public static final String POST_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String PHONE = GenerateRandomDataUtils.generateRandomNumber(7);
 	public static final String ADDRESS_ID = GenerateRandomDataUtils.generateRandomAlphaNumeric(5);
-	private static final String EMAIL = "aila.bogasieru@ariat.com";
-	private static final String PASSWORD = "Parola12345!";
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
+	
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
@@ -55,7 +54,7 @@ public class LoadMoreAddressUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageMiddleNav();
 		addressesPage.loadMoreAddesses();
@@ -69,7 +68,7 @@ public class LoadMoreAddressUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		addressesPage = myAccountPage.returnAddressesPageLeftNav();
 		addressesPage.loadMoreAddesses();

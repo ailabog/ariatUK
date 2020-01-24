@@ -13,19 +13,20 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Header.SignInPage;
-
 
 /**
  * Tests for delete credit card United Kingdom
+ * 
  * @author aila.bogasieru@ariat.com
  *
  */
 
+public class DeleteCreditCardUKTest extends BaseTest {
 
-public class DeleteCreditCardUKTest extends BaseTest{
-	
 	private HomePage homePage;
 	private HomePageUK homePageUK;
 	private SignInPage signInPage;
@@ -34,16 +35,11 @@ public class DeleteCreditCardUKTest extends BaseTest{
 	private Environments environment;
 	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
-	
-	private static final String EMAIL = "aila.bogasieru@yahoo.com";
-	private static final String PASSWORD = "Parola12345!";
-	
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
+
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test
@@ -53,15 +49,15 @@ public class DeleteCreditCardUKTest extends BaseTest{
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		paymentInfoPage = myAccountPage.returnPaymentInformationPageAddDeleteCardMiddleNav();
-	    paymentInfoPage.deleteCreditCardNo("name",typeCard.VISA.getName() , "01/2029");
-	    paymentInfoPage.deleteCreditCardYes("name", typeCard.VISA.getName(), "01/2029");
+		paymentInfoPage.deleteCreditCardNo("name", typeCard.VISA.getName(), "01/2029");
+		paymentInfoPage.deleteCreditCardYes("name", typeCard.VISA.getName(), "01/2029");
 		logger.info("Finishing delete credit card from Payment info UK test");
-		
-  }
-	
+
+	}
+
 	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
@@ -71,5 +67,5 @@ public class DeleteCreditCardUKTest extends BaseTest{
 		myAccountPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

@@ -19,8 +19,10 @@ import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Pages.Main.MyWishListPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Product page - > Women Category -> Add to Wishlist test
@@ -59,14 +61,11 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
-	public static final String EMAIL_WISHLIST = "aila.bogasieru@ariat.com";
-	
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
+
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
 
 	@Test(priority=0)
@@ -99,8 +98,8 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
 		glovesProductPage.selectAttributeSize("7");
 		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
-		myAccountWishListPage.returningCustomer(EMAIL, "EnglishUK");
-		myAccountWishListPage.returningPassword(PASSWORD);
+		myAccountWishListPage.returningCustomer(CredentialsUtils.getProperty("email"), "EnglishUK");
+		myAccountWishListPage.returningPassword(CredentialsUtils.getProperty("password"));
 		myWishListPage = myAccountWishListPage.returnMyWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList not being logged test.");
 	}
@@ -118,7 +117,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		glovesProductPage.selectAttributeSize("7");
 		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		createAccountPage = myAccountWishListPage.returnCreateAccountPage();
-		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, EMAIL, EMAIL, PASSWORD, PASSWORD);
+		createAccountPage.createAccount(FIRST_NAME, LAST_NAME, BIRTH_MONTH, BIRTH_DAY, CredentialsUtils.getProperty("email"), CredentialsUtils.getProperty("email"), CredentialsUtils.getProperty("password"), CredentialsUtils.getProperty("password"));
 		myAccountWishListPage = createAccountPage.returnMyAccountWishListPage();
 		logger.info("Finishing product page -> Women Category Add to WishList create account test.");
 	} 
@@ -137,7 +136,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 		myAccountWishListPage = glovesProductPage.returnMyAccountWishListPage();
 		myAccountWishListPage.findWishListFName(F_NAME);
 		myAccountWishListPage.findWishListLName(L_NAME);
-		myAccountWishListPage.findWishListEmail(EMAIL_WISHLIST);
+		myAccountWishListPage.findWishListEmail(CredentialsUtils.getProperty("email"));
 		myAccountWishListPage.findWishListClick();
 		logger.info("Finishing product page -> Women Category find someone's WishList test.");
 	}

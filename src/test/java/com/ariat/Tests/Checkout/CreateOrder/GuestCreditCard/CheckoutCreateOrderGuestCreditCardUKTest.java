@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
+import com.ariat.Enums.SelectCountry;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
@@ -18,8 +19,10 @@ import com.ariat.Pages.Main.MyBagPage;
 import com.ariat.Pages.Main.PaymentMethodsCheckoutPage;
 import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.GenerateRandomDataUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Checkout -> Create new order
@@ -51,16 +54,14 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	public static final String CITY = "London";
 	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
-	public static final String EMAIL = "aila.bogasieru@ariat.com";
 	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
 	private ListOfCreditCards typeCard;
+	private SelectCountry selectCountry;
 
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
@@ -77,15 +78,17 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.setInfoAccountSecureCheckoutUK(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
-		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
-		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(), typeCard.MASTER_CARD.getCvs());
+		checkoutProcessPage.setInfoAccountSecureCheckout(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
+				CredentialsUtils.getProperty("email"), selectCountry.UK);
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		//paymentMethodsCheckoutPage.enterCardNameNotlogged(CARD_NAME);
+		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(),
+				typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
-	} 
-	
+	}
+
 	@Test(priority = 1)
 	public void checkoutCreateNewOrderNotBeingLoggedVisaUK() {
 		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
@@ -100,14 +103,16 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.setInfoAccountSecureCheckoutUK(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE, EMAIL);
-		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.VISA.getNumber(), typeCard.VISA.getCvs());
+		checkoutProcessPage.setInfoAccountSecureCheckout(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
+				CredentialsUtils.getProperty("email"), selectCountry.UK);
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.VISA.getNumber(),
+				typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
-	} 
-	
+	}
+
 	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
@@ -122,5 +127,5 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		glovesProductPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

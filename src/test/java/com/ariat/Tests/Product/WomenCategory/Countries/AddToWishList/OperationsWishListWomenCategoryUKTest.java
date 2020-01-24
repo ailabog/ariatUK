@@ -18,7 +18,9 @@ import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessor
 import com.ariat.Pages.Categories.WomenCategories.WomenClothing.WomenClothingSubcategories.WomenClothingTopsAndTshirtsPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Product page - > Women Category -> Add to wishlist update, edit, set
@@ -46,13 +48,11 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 
 	public static final String F_NAME = "Aila";
 	public static final String L_NAME = "Bogasieru";
-	public static final String EMAIL_WISHLIST = "aila.bogasieru@ariat.com";
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
 	
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
@@ -62,7 +62,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails("aila.bogasieru@ariat.com", "EnglishUK", "Parola12345!");
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
@@ -81,7 +81,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails("aila.bogasieru@ariat.com", "EnglishUK", "Parola12345!");
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();

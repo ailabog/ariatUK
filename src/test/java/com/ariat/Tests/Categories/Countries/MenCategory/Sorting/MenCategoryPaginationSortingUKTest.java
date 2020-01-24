@@ -12,7 +12,7 @@ import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Categories.MenCategories.MenCategoryPage;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
-
+import com.ariat.Utils.SetSelenium;
 
 /**
  * Pagination and sorting for Men Category
@@ -28,12 +28,11 @@ public class MenCategoryPaginationSortingUKTest extends BaseTest {
 	private HomePage homePage;
 	private HomePageUK homePageUK;
 	private MenCategoryPage menCategoryPage;
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-    @BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+
+	@BeforeTest
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test
@@ -56,7 +55,7 @@ public class MenCategoryPaginationSortingUKTest extends BaseTest {
 		menCategoryPage.prevPaginationButtonUp();
 		logger.info("Finishing  sort and navigate pagination test.");
 	}
-	
+
 	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
@@ -64,5 +63,5 @@ public class MenCategoryPaginationSortingUKTest extends BaseTest {
 		menCategoryPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

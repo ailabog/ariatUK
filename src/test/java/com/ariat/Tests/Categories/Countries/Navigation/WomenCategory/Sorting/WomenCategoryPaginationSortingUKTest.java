@@ -10,8 +10,8 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Tests.Base.BaseTest;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
-
 
 /**
  * Pagination and sorting for Women Category United Kingdom test
@@ -27,12 +27,11 @@ public class WomenCategoryPaginationSortingUKTest extends BaseTest {
 	private HomePage homePage;
 	private HomePageUK homePageUK;
 	private WomenCategoryPage womenCategoryPage;
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
-    @BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+
+	@BeforeTest
+	public void setSeleniumUP() {
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
 
 	@Test
@@ -53,13 +52,13 @@ public class WomenCategoryPaginationSortingUKTest extends BaseTest {
 		womenCategoryPage.show36ItemsUp();
 		womenCategoryPage.nextPaginationUp();
 		womenCategoryPage.prevPaginationButtonUp();
-		//womenCategoryPage.show72ItemsDown();
+		// womenCategoryPage.show72ItemsDown();
 		womenCategoryPage.show108ItemLinkDown();
 		womenCategoryPage.nextPaginationDown();
 		womenCategoryPage.backToTopClick();
 		logger.info("Finishing  sort and navigate pagination test.");
 	}
-	
+
 	@AfterTest
 	public void clearBrowserSession() {
 		homePage.quit();
@@ -67,5 +66,5 @@ public class WomenCategoryPaginationSortingUKTest extends BaseTest {
 		womenCategoryPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

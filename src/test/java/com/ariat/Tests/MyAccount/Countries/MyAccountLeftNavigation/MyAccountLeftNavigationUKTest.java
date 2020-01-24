@@ -11,7 +11,9 @@ import com.ariat.Pages.HomePagesCountries.HomePage;
 import com.ariat.Pages.HomePagesCountries.HomePageUK;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Header.SignInPage;
 
 /**
@@ -30,14 +32,10 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 	private SignInPage signInPage;
 	private MyAccountPage myAccountPage;
 
-	public static final String EMAIL = "aila.bogasieru@ariat.com";
-	public static final String PASSWORD = "Parola12345!";
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-	public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-	
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
@@ -47,7 +45,7 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnEditProfilePageLeftNav();
 		myAccountPage.myAccountClick();
@@ -62,7 +60,7 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnEmailPreferencePageLeftNav();
 		myAccountPage.myAccountClick();
@@ -77,7 +75,7 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnAddressesPageLeftNav();
 		myAccountPage.myAccountClick();
@@ -92,7 +90,7 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnPaymentInformationPageLeftNav();
 		myAccountPage.myAccountClick();
@@ -109,7 +107,7 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyOrdersPageLeftNav();
 		myAccountPage.myAccountClick();
@@ -124,7 +122,7 @@ public class MyAccountLeftNavigationUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		myAccountPage.returnMyWishListPageLeftNav();
 		myAccountPage.myAccountClick();

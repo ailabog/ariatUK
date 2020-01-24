@@ -14,7 +14,9 @@ import com.ariat.Pages.Main.AddACreditCardPage;
 import com.ariat.Pages.Main.MyAccountPage;
 import com.ariat.Pages.Main.PaymentInformationPage;
 import com.ariat.Tests.Base.BaseTest;
+import com.ariat.Utils.CredentialsUtils;
 import com.ariat.Utils.KillChrome;
+import com.ariat.Utils.SetSelenium;
 import com.ariat.Pages.Header.SignInPage;
 
 
@@ -37,21 +39,18 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
 	private EUCountries euCountry;
 	private ListOfCreditCards typeCard;
 	
-	private static final String EMAIL = "aila.bogasieru@yahoo.com";
-	private static final String PASSWORD = "Parola12345!";
+
 	private static final String CARD_ID = "MASTER_ID123";
 	private static final String CARD_OWNER = "Aila B";
 	private static final String YEAR = "2023";
 	private static final String MONTH = "December";
 	
-	public static final String RELATIV_PATH = "/src/test/resources/chromedriver/chromedriver.exe";
-    public static final String ABSOLUTE_PATH = System.getProperty("user.dir")+ RELATIV_PATH;
-			
 	@BeforeTest
-	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", ABSOLUTE_PATH);
+	public void setSeleniumUP() {
+	SetSelenium setPath = new SetSelenium();
+	setPath.setSelenium();
 	}
-
+	
 	@Test
 	public void add_deleteCreditCardUKTest() {
 		String expirationDate = "MONTH/YEAR";
@@ -60,7 +59,7 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(EMAIL, "EnglishUK", PASSWORD);
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
 		addACreditCardPage.setDetailsCreditCard(CARD_ID, CARD_OWNER, typeCard.MASTER_CARD1.getName(), typeCard.MASTER_CARD1.getNumber(),typeCard.MASTER_CARD1.getCvs(), YEAR, MONTH);

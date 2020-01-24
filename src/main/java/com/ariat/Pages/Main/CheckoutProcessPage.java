@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.ariat.Enums.SelectCountry;
 import com.ariat.Utils.WebDriverUtils;
 
 /**
@@ -27,7 +28,6 @@ public class CheckoutProcessPage extends BasePage {
 	private By firstName = By.name("firstName");
 	private By lastName = By.name("lastName");
 	private By address = By.name("address1");
-	private By address1 = By.name("address2");
 	private By city = By.name("city");
 	private By zipCode = By.name("zipcode");
 	private By checkCheckBoxBilling = By.xpath("//input[@value='Use this address for Billing']");
@@ -52,7 +52,6 @@ public class CheckoutProcessPage extends BasePage {
 	private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
 	private By signInLink = By.xpath("//a[text()='Sign In']");
     private By arrowAddress= By.xpath("//i[@class='el-select__caret el-input__icon el-icon-arrow-up']");
-	
 	private By addressLocator = By.xpath("//span[contains(text(), 'Ekecw - Basarabia Blvd, No 62')]");
 	
 
@@ -107,7 +106,7 @@ public class CheckoutProcessPage extends BasePage {
 		}
 	}
 	
-	public void setInfoAccountSecureCheckoutUK(String nameValue, String lastValue, String addressValue, String cityValue, String zipCodeValue, String mobileValue, String emailValue)
+	public void setInfoAccountSecureCheckout(String nameValue, String lastValue, String addressValue, String cityValue, String zipCodeValue, String mobileValue, String emailValue, SelectCountry optionCountry)
 	 {
 	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	WebDriverUtils.enterTextBox(driver, firstName, nameValue);
@@ -118,8 +117,70 @@ public class CheckoutProcessPage extends BasePage {
 	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	WebDriverUtils.enterTextBox(driver, city, cityValue);
 	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-	WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
-	WebDriverUtils.clickOnElementWithWait(driver, selectOption);
+	
+	switch (optionCountry.getCountryName()) {
+	case "UK":
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrolltoElement(driver, optionCountry.getLocator());
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
+	
+	case "Austria":
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
+	
+	case "Belgium":
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrolltoElement(driver, optionCountry.getLocator());
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
+		
+	case "France":
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrolltoElement(driver, optionCountry.getLocator());
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
+		
+	case "Deutschland":
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrolltoElement(driver, optionCountry.getLocator());
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
+		
+	case "Sweden":
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrolltoElement(driver, optionCountry.getLocator());
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
+		
+	case "Ireland":
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrolltoElement(driver, optionCountry.getLocator());
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
+		
+	case "Denmark":
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrolltoElement(driver, optionCountry.getLocator());
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
+		
+	case "Finland":
+		WebDriverUtils.clickOnElementWithWait(driver, arrowCountry);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.scrolltoElement(driver, optionCountry.getLocator());
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, optionCountry.getLocator());
+	}
+	
 	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
 	WebDriverUtils.enterTextBox(driver, zipCode, zipCodeValue);
 	WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
