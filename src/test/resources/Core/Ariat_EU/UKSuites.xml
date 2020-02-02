@@ -27,6 +27,14 @@
                <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavUKTest" />
            
                <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
+               
+               <class name="com.ariat.Tests.MyAccount.Countries.MiddleNav.MyAccountMiddleNavigationUKTest" />
+                
+               <class name="com.ariat.Tests.MyAccount.Countries.PersonalInfo.PersonalInformationUKTest" />
+              
+               <class name="com.ariat.Tests.Logout.Countries.LogoutUKTest" />
+              
+               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
      
         </classes>
      </test>
