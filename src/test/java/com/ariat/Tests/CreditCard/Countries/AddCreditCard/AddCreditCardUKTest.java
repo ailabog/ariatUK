@@ -40,8 +40,8 @@ public class AddCreditCardUKTest extends BaseTest {
 
 	private static final String CARD_ID = "XX";
 	private static final String CARD_OWNER = "Aila B";
-	private static final String YEAR = "2023";
-	private static final String MONTH = "January";
+	private static final String YEAR = "2021";
+	private static final String MONTH = "December";
 
 	@BeforeTest
 	public void setSeleniumUP() {
