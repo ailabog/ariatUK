@@ -19,6 +19,14 @@
                <class name="com.ariat.Tests.HeaderAndFooter.Countries.HeaderAndFooterUKTest" />
               
                <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
+               
+                <class name="com.ariat.Tests.Categories.Countries.MenCategory.Sorting.MenCategoryPaginationSortingUKTest" />
+          
+               <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.LeftNav.WomenFootwearSubcategoriesLeftNavUKTest" />
+            
+               <class name="com.ariat.Tests.Categories.Countries.Navigation.WomenCategory.TopNav.WomenCategoriesAndSubcategoriesTopNavUKTest" />
+           
+               <class name ="com.ariat.Tests.Base.KillChromeTests" /> 
      
         </classes>
      </test>
