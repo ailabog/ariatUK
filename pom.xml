@@ -126,7 +126,7 @@
                 <configuration>
                  <forkCount>0</forkCount>
                     <suiteXmlFiles>
-                       <suiteXmlFile>src/test/resources/Core/Ariat_EU/UKSuites.xml</suiteXmlFile>
+                      <suiteXmlFile>src/test/resources/Core/Ariat_EU/UKSuites.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -183,5 +183,6 @@
       </plugin>
     </plugins>
   </reporting>
-</project>        
+
+  </project>        
 
