@@ -30,10 +30,10 @@ public class WomenAccessoriesPage extends BasePage{
 	private By womenAccessoriesScarfAndPonchosText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
 	private By womenAccessoriesSocksCategory = By.linkText("Socks");
 	private By womenAccessoriesSocksText = By.xpath("//*[@id=\"main\"]/div/div[2]/div[2]/div[1]/span[1]");
-	private By womenAccessoriesGlovesLeftNav = By.linkText("Gloves");
-        
-   		public WomenAccessoriesPage(WebDriver driver) {
-		super(driver);
+	private By womenAccessoriesGlovesLeftNav = By.xpath("//a[@class='aside-nav__category  collapsible ' and @href='/gb/en/Women-Accessories-Gloves']");
+	        
+  public WomenAccessoriesPage(WebDriver driver) {
+  super(driver);
 	}
 	
 		

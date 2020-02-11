@@ -38,7 +38,7 @@ public class HomePageUK extends BasePage {
 
 	private By ariatLogo = By.className("global-nav-logo-svg");
 	private By signIn = By.xpath("//a[text()='Sign In']");
-	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
+	private By womenCategory = By.xpath("//a[@class='global-nav-level-1-label ' and @href='/gb/en/Women']");
 	private By menCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[2]/a");
 	private By kidsCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[3]/a");
 	private By clearanceCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[4]/a");
@@ -125,7 +125,8 @@ public class HomePageUK extends BasePage {
 
 	private By aboutUsHeader = By.linkText("About Us");
 	private By ridingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[1]/a");
-
+    private By glovesCategory = By.xpath("//ul[@class='global-nav-level-3']//a[text()='Gloves']");
+    
 	public void checkElementsHeader() {
 		if (WebDriverUtils.isElementDisplayed(driver, ariatLogo)) {
 			WebDriverUtils.clickOnElementWithWait(driver, ariatLogo);
@@ -427,6 +428,16 @@ public class HomePageUK extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(womenText));
 		return new WomenCategoryPage(driver);
+	}
+
+	
+	public WomenCategoryPage returnWomenGloves() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.clickOnElementWithWait(driver, glovesCategory);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(womenText));
+		
+		return new WomenCategoryPage(driver);	
 	}
 	
 	public WomenCategoryPage returnWomenCategoryPageRiding() {

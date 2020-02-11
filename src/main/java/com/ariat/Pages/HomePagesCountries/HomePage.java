@@ -66,7 +66,7 @@ public class HomePage extends BasePage {
 				WebDriverUtils.clickOnElementWithWait(driver, saveAndContinueLocationButton);
 			}
 			return new HomePageUK(driver);
-			
+				
 		default:
 			throw new RuntimeException("Country" + euCountry + "not supported");
 		}
