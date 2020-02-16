@@ -62,7 +62,7 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
 		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		addACreditCardPage = myAccountPage.returnAddACreditCardMiddleNav();
-		addACreditCardPage.setDetailsCreditCard(CARD_ID, CARD_OWNER, typeCard.MASTER_CARD1.getName(), typeCard.MASTER_CARD1.getNumber(),typeCard.MASTER_CARD1.getCvs(), YEAR, MONTH);
+		addACreditCardPage.setDetailsCreditCard(CARD_ID, CARD_OWNER, typeCard.MASTER_CARD1.getName(), typeCard.MASTER_CARD1.getNumber(),typeCard.MASTER_CARD1.getCvs(), MONTH, YEAR);
 		paymentInfoPage = addACreditCardPage.returnPaymentInformationPage();
 		paymentInfoPage.checkCreditCard(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);
 		paymentInfoPage.deleteCreditCardYes(CARD_OWNER, typeCard.MASTER_CARD1.getName(), expirationDate);

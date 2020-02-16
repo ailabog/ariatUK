@@ -76,6 +76,9 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		try {
+		checkoutProcessPage.selectAddress();
+		}catch(Exception e) {};
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
@@ -101,6 +104,9 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
+		try {
+		checkoutProcessPage.selectAddress();
+		}catch(Exception e) {};
 		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());

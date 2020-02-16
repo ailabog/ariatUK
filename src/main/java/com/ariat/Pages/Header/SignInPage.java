@@ -62,23 +62,27 @@ public class SignInPage extends BasePage {
 		switch (language) {
 		case "EnglishUK":
 			logger.info("Entering information for an existing customer: email address", email);
-			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUK, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUK, email);
+		
 			break;
 
 		case "EnglishUS":
 			logger.info("Entering information for an existing customer: email address", email);
-			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUS, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.enterTextBox(driver, addressEmailTextBoxUS, email);
+		
 			break;
 		case "Deutsch":
 			logger.info("Entering information for an existing customer: email address", email);
+			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxDE, email);
 			break;
 		case "Francais":
 			logger.info("Entering information for an existing customer: email address", email);
-			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxFR, email);
 			WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+			WebDriverUtils.enterTextBox(driver, emailAddressTextBoxFR, email);
+		
 			break;
 		default:
 			throw new RuntimeException("Language" + language + "not supported");
@@ -87,8 +91,6 @@ public class SignInPage extends BasePage {
 		logger.info("Entering information for an existing customer: password", password);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 		WebDriverUtils.enterTextBox(driver, passwordTextBox, password);
-		//WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		//WebDriverUtils.clickOnElementWithWait(driver, loginButton);
 	}
 	
 	public void loginClick() {

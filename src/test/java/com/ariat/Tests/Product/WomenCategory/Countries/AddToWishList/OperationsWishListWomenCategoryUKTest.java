@@ -102,8 +102,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 		homePageUK.quit();
 		signInPage.quit();
 		myAccountPage.quit();
-		womenClothingTopsAndTshirtsPage.quit();
-		myWishListPage.quit();
+    	myWishListPage.quit();
 		glovesProductPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
