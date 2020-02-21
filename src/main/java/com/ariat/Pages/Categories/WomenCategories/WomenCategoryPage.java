@@ -32,7 +32,7 @@ public class WomenCategoryPage extends BasePage {
 	private By womenAccessoriesText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
 	private By womenFeaturedCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[8]/li/a");
 	private By womenFeaturedText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
-    private By womenFootwearCategoryLeftNav = By.linkText("Footwear");
+    private By womenFootwearCategoryLeftNav = By.xpath("//a[@class='global-nav-level-2-label ' and contains(text(), 'Footwear')]");
 	private By leftnavClothing = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[3]/ul/li[2]/a");
 	private By womenCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/a");
 	private By womenText = By.xpath("//*[@id=\"main\"]/div/div[1]/aside/div[2]/span[1]");
@@ -56,7 +56,7 @@ public class WomenCategoryPage extends BasePage {
 	private By priceHighToLowLink = By.linkText("Price (High to Low)");
 	private By priceLowToHighLink = By.linkText("Price (Low to High)");
 	private By bestSellersLink = By.linkText("Best Sellers");
-	private By womenAccesoriesCategoryLefytNav = By.linkText("Accessories");
+	private By womenAccesoriesCategoryLefytNav = By.xpath("//a[@class='global-nav-level-2-label ' and contains(text(), 'Accessories')]");
 	private By expandIconFootwear = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[1]/a/span[2]");
 	private By expandIconAccessories = By.xpath("//*[@id=\"main\"]/div[1]/ul/li[3]/a/span[2]");
 	private By womenFootwearCasualShoesCategory = By.linkText("Casual Shoes");
@@ -237,13 +237,6 @@ public class WomenCategoryPage extends BasePage {
 		return new WomenClothingPage(driver);
 	}
 	
-	public BagsProductPage returnBagsProductPage() {
-		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
-		WebDriverUtils.clickOnElementWithWait(driver, garmentBagProduct);
-		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
-				ExpectedConditions.invisibilityOfElementLocated(garmentText));
-		return new BagsProductPage(driver);
-	}
 
 	public WomenCategoryPage returnWomenCategoryPage() {
 		WebDriverUtils.clickOnElementWithWait(driver, womenCategory);
