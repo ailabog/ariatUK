@@ -55,10 +55,10 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 
 	@BeforeTest
 	public void setSeleniumUP() {
-	SetSelenium setPath = new SetSelenium();
-	setPath.setSelenium();
+		SetSelenium setPath = new SetSelenium();
+		setPath.setSelenium();
 	}
-	
+
 	@Test(priority = 0)
 	public void checkoutCreateNewOrderBeingLoggedMasterCardUK() {
 		logger.info("Starting checkout -> create new order being logged credit card Master Card test...");
@@ -66,24 +66,24 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
-    	myAccountPage = signInPage.returnMyAccountPage();
-		womenCategoryPage = myAccountPage.returnWomenCategoryPage();
-		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
-		womenAccessoriesGlovesPage = womenAccessoriesPage.returnWomenAccessoriesGlovesCategoryleftNavPage();
-		glovesProductPage = womenAccessoriesGlovesPage.returnGlovesProductPagePage();
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK",
+				CredentialsUtils.getProperty("password"));
+		myAccountPage = signInPage.returnMyAccountPage();
+		glovesProductPage = homePageUK.returnGlovesProductPage();
 		glovesProductPage.selectAttributeSize("7");
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		try {
-		checkoutProcessPage.selectAddress();
-		}catch(Exception e) {};
-		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		checkoutProcessPage.selectAddress();}
+		catch(Exception e) {
+	    }
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
+		
 		logger.info("Finishing checkout -> create new order being logged credit card Master Card test.");
 	}
 
@@ -94,7 +94,8 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		homePage.load(environment.DEVELOPMENT.getURL());
 		homePageUK = (HomePageUK) homePage.chooseEULocation(euCountry.UK, euCountry.UK.getCurrencyISO());
 		signInPage = homePageUK.returnSignInPage();
-		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK", CredentialsUtils.getProperty("password"));
+		signInPage.setLoginDetails(CredentialsUtils.getProperty("email"), "EnglishUK",
+				CredentialsUtils.getProperty("password"));
 		myAccountPage = signInPage.returnMyAccountPage();
 		womenCategoryPage = homePageUK.returnWomenCategoryPage();
 		womenAccessoriesPage = womenCategoryPage.returnWomenAccessoriesCategoryLeftNavPage();
@@ -105,18 +106,19 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
 		try {
-		checkoutProcessPage.selectAddress();
-		}catch(Exception e) {};
-		paymentMethodsCheckoutPage= checkoutProcessPage.returnPaymentMethodsCheckoutPage();
+		checkoutProcessPage.selectAddress();}
+		catch(Exception e) {
+		}
+		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
 		paymentMethodsCheckoutPage.scroll1500DownSecurittCode();
 		paymentMethodsCheckoutPage.enterSecurityCode(typeCard.VISA.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order being logged credit card Visa test.");
 	}
-	
+
 	@AfterTest
-	public void clearBrowserSession() {
+	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();
@@ -130,5 +132,5 @@ public class CheckoutCreateOrderCustomerCreditCardUKTest extends BaseTest {
 		myAccountPage.quit();
 		KillChrome kill = new KillChrome();
 		kill.killChrome();
-    }
+	}
 }

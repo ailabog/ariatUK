@@ -26,6 +26,7 @@ import com.ariat.Pages.Header.SignInPage;
 import com.ariat.Pages.Main.BasePage;
 import com.ariat.Pages.Main.MyAccountWishListPage;
 import com.ariat.Pages.Products.CasualShoeProductPage;
+import com.ariat.Pages.Products.GlovesProductPage;
 import com.ariat.Utils.WebDriverUtils;
 
 public class HomePageUK extends BasePage {
@@ -125,7 +126,9 @@ public class HomePageUK extends BasePage {
 
 	private By aboutUsHeader = By.linkText("About Us");
 	private By ridingCategory = By.xpath("//*[@id=\"global-nav-container\"]/li[1]/div[2]/div/div[2]/ul[1]/li/ul/li[1]/a");
-    private By glovesCategory = By.xpath("//ul[@class='global-nav-level-3']//a[text()='Gloves']");
+	private By glovesCategory = By.xpath("//a[text()='Gloves']");
+    private By tekGrip = By.xpath("//img[@class='psd-4-full-width-video-module-1__image ms-image-responsive ms-full-width lazyloaded' and @title='Insulated Tek Grip']");
+	private By tekGripText = By.xpath("//*contains[text()='Tek Grip']");
     
 	public void checkElementsHeader() {
 		if (WebDriverUtils.isElementDisplayed(driver, ariatLogo)) {
@@ -506,6 +509,17 @@ public class HomePageUK extends BasePage {
 		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
 				ExpectedConditions.invisibilityOfElementLocated(faqsFooterText));
 		return new FaqsPage(driver);
+	}
+	
+	public GlovesProductPage returnGlovesProductPage() {
+		WebDriverUtils.moveToElement(driver, womenCategory);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, glovesCategory);
+		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_6000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, tekGrip);
+		WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_6000_SECONDS,
+				ExpectedConditions.invisibilityOfElementLocated(tekGripText));
+		return new GlovesProductPage(driver);
 	}
 
 	public SizeChartsPage returnSizeChartsPage() {

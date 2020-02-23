@@ -18,7 +18,7 @@ import com.ariat.Utils.WebDriverUtils;
 public class WomenAccessoriesGlovesPage extends BasePage {
 
 
-	private By tekGrip = By.xpath("//img[@class='psd-4-full-width-video-module-1__image ms-image-responsive ms-full-width lazyloaded and @title='Insulated Tek Grip']");
+	private By tekGrip = By.xpath("//img[@class='psd-4-full-width-video-module-1__image ms-image-responsive ms-full-width lazyloaded' and @title='Insulated Tek Grip']");
 	private By tekGripText = By.xpath("//*contains[text()='Tek Grip']");
 
 	public WomenAccessoriesGlovesPage(WebDriver driver) {

@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import com.ariat.Enums.EUCountries;
 import com.ariat.Enums.Environments;
 import com.ariat.Enums.ListOfCreditCards;
-import com.ariat.Enums.SelectCountry;
 import com.ariat.Pages.Categories.WomenCategories.WomenCategoryPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenAccessories.WomenAccessoriesSubcategories.WomenAccessoriesGlovesPage;
 import com.ariat.Pages.Categories.WomenCategories.WomenSubcategories.WomenAccessoriesPage;
@@ -54,9 +53,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	public static final String CITY = "London";
 	public static final String ZIP_CODE = GenerateRandomDataUtils.generateRandomNumber(5);
 	public static final String MOBILE = GenerateRandomDataUtils.generateRandomNumber(7);
-	public static final String PASSWORD = GenerateRandomDataUtils.generateRandomString(10);
 	private ListOfCreditCards typeCard;
-	private SelectCountry selectCountry;
 
 	@BeforeTest
 	public void setSeleniumUP() {
@@ -78,11 +75,11 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.setInfoAccountSecureCheckout(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
-				CredentialsUtils.getProperty("email"), selectCountry.AUSTRIA);
+		checkoutProcessPage.setInfoAccountSecureCheckoutUK(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
+				CredentialsUtils.getProperty("email"));
 		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(),
-				typeCard.MASTER_CARD.getCvs());
+	    paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(),
+		typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged cardc Master Card test.");
@@ -102,18 +99,18 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 		myBagPage = glovesProductPage.returnMyBagPage();
 		checkoutPage = myBagPage.returnCheckoutPage();
 		checkoutProcessPage = checkoutPage.returnCheckoutProcessPage();
-		checkoutProcessPage.setInfoAccountSecureCheckout(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
-				CredentialsUtils.getProperty("email"), selectCountry.AUSTRIA);
+		checkoutProcessPage.setInfoAccountSecureCheckoutUK(FIRST_NAME, LAST_NAME, ADDRESS, CITY, ZIP_CODE, MOBILE,
+				CredentialsUtils.getProperty("email"));
 		paymentMethodsCheckoutPage = checkoutProcessPage.returnPaymentMethodsCheckoutPage();
-		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.VISA.getNumber(),
-				typeCard.VISA.getCvs());
+		paymentMethodsCheckoutPage.setPaymentDetailsSecureCheckout(CARD_NAME, typeCard.MASTER_CARD.getNumber(),
+				typeCard.MASTER_CARD.getCvs());
 		paymentMethodsCheckoutPage.reviewOrder();
 		paymentMethodsCheckoutPage.reviewOrder();
 		logger.info("Finishing checkout -> create new order without being logged credit card Visa test.");
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void tearDown() {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();

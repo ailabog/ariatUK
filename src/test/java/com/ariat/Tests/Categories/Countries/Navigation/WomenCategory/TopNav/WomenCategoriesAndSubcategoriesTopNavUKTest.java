@@ -109,7 +109,6 @@ public class WomenCategoriesAndSubcategoriesTopNavUKTest extends BaseTest {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();
-		womenFootwearPage.quit();
 
 		womenFootwearRidingPage.quit();
 		womenFootwearWesternPage.quit();
