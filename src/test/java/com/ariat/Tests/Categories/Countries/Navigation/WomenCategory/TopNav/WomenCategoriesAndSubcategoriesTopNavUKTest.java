@@ -76,13 +76,13 @@ public class WomenCategoriesAndSubcategoriesTopNavUKTest extends BaseTest {
 	private WomenFeaturedTriFactorBreechPage womenFeaturedTriFactorBreechPage;
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
 
 	@Test
-	public void navigateWomenClothingCategoriesTestUK() {
+	public void NavigateWomenClothingCategoriesTestUK() {
 		logger.info("Starting navigate Women Clothing sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -105,7 +105,7 @@ public class WomenCategoriesAndSubcategoriesTopNavUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();

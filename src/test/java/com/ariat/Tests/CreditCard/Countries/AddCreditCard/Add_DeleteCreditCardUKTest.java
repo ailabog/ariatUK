@@ -46,13 +46,13 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
 	private static final String MONTH = "December";
 	
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 	SetSelenium setPath = new SetSelenium();
 	setPath.setSelenium();
 	}
 	
 	@Test
-	public void add_deleteCreditCardUKTest() {
+	public void Add_deleteCreditCardUKTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add credit card & delete it Kingdom test");
 		homePage = new HomePage(new ChromeDriver());
@@ -70,7 +70,7 @@ public class Add_DeleteCreditCardUKTest extends BaseTest{
   } 
 	
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

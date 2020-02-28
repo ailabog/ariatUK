@@ -30,13 +30,13 @@ public class MenCategoryPaginationSortingUKTest extends BaseTest {
 	private MenCategoryPage menCategoryPage;
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
 
 	@Test
-	public void navigateMenCategoryUK() {
+	public void NavigateMenCategoryUK() {
 		logger.info("Starting sort and navigate pagination test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -57,7 +57,7 @@ public class MenCategoryPaginationSortingUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		menCategoryPage.quit();

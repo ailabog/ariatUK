@@ -2,6 +2,7 @@ package com.ariat.Pages.Main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +40,7 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 	private By arrowExpYear = By.cssSelector(".el-form-item:nth-child(8) .el-select__caret");
 	private By buyNowBtn = By.id("confirmpayment");
 	private By typeCardList = By.id("c-ct");
+	private By checkoutCompleteText = By.xpath("//*[contains(text(), 'Checkout Complete']");
 
 	protected PaymentMethodsCheckoutPage(WebDriver driver) {
 		super(driver);
@@ -91,8 +93,9 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 			throw new RuntimeException("Language" + optionMethod + "not supported");
 		}
 	}
-	
-	public void setPaymentDetailsSecureCheckout(String cardNameValue, String cardNumberValue, String securityCardValue) {
+
+	public void setPaymentDetailsSecureCheckout(String cardNameValue, String cardNumberValue,
+			String securityCardValue) {
 		WebDriverUtils.scroll350Down(driver, nameText);
 		WebDriverUtils.enterTextBox(driver, nameText, cardNameValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
@@ -149,10 +152,9 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	
 	public void typeCard(String typeCard) {
 		WebDriverUtils.scroll350Down(driver, typeCardList);
-		//WebDriverUtils.clickOnElementWithWait(driver, typeCardList);
+		// WebDriverUtils.clickOnElementWithWait(driver, typeCardList);
 		WebDriverUtils.selectVisibleText(driver, typeCardList, typeCard);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
@@ -178,19 +180,22 @@ public class PaymentMethodsCheckoutPage extends BasePage {
 		WebDriverUtils.clickOnElementWithWait(driver, expirationDateYear);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
-	
-	
+
 	public void enterSecurityCode(String securityCardValue) {
 		logger.info("Entering security card..");
 		WebDriverUtils.enterTextBox(driver, securityCode, securityCardValue);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
 	}
 
-	
 	public void reviewOrder() {
-		 WebDriverUtils.scroll350Down(driver, reviewOrderBtn);
-		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtn);
+		WebDriverUtils.scroll500Down(driver, reviewOrderBtn);
 		WebDriverUtils.explicitWait(driver, WebDriverUtils.WAIT_4000_SECONDS);
+		WebDriverUtils.clickOnElementWithWait(driver, reviewOrderBtn);
+		try {
+			WebDriverUtils.waitUntil(driver, WebDriverUtils.WAIT_4000_SECONDS,
+					ExpectedConditions.invisibilityOfElementLocated(checkoutCompleteText));
+		} catch (Exception e) {
+		}
 	}
 
 	public void expandPromoCode() {

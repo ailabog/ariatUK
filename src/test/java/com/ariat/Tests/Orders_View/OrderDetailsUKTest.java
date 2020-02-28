@@ -36,13 +36,13 @@ public class OrderDetailsUKTest extends BaseTest {
 	private EUCountries euCountry;
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 	SetSelenium setPath = new SetSelenium();
 	setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
-	public void ordersChecksViewAllOrdersTestUK() {
+	public void OrdersChecksViewAllOrdersTestUK() {
 		logger.info("Starting order details checks - View all orders test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -57,7 +57,7 @@ public class OrderDetailsUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void orderChecksMyAccountMiddleNavTestUK() {
+	public void OrderChecksMyAccountMiddleNavTestUK() {
 		logger.info("Starting order details checks - My account view test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -71,7 +71,7 @@ public class OrderDetailsUKTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void orderChecksMyAccountTopNavTestUK() {
+	public void OrderChecksMyAccountTopNavTestUK() {
 		logger.info("Starting orders check information orders test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -84,7 +84,7 @@ public class OrderDetailsUKTest extends BaseTest {
 	}
 	
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

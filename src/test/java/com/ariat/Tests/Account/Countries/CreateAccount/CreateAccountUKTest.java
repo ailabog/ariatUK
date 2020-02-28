@@ -51,13 +51,13 @@ public class CreateAccountUKTest extends BaseTest {
 	public static final String ERROR_MESSAGE = "Sorry this order number or postcode does not match our records. Check your records and try again.";
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
-	public void createAccountTestUK() {
+	public void CcreateAccountTestUK() {
 		logger.info("Starting create account test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -71,7 +71,7 @@ public class CreateAccountUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void returningCustomerTestUK() {
+	public void ReturningCustomerTestUK() {
 		logger.info("Starting returning customer test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

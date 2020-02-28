@@ -48,7 +48,6 @@ public class CheckoutProcessPage extends BasePage {
 	private By expandGiftCard = By.xpath("//i[text()='Gift card']");
 	private By expandPromoCode = By.xpath("//i[text()='Promo code']");
 	private By checkoutBtn = By.xpath("//div[@data-funding-source='paypal']");
-	//private By nextPaymentButton = By.xpath("//button[@class='el-button el-button--primary checkout__button checkout_button __next-payment']");
 	private By nextPaymentButton = By.xpath("//span[text()='Next: Payment']");
 	private By closeWindowAddressBtn = By.xpath("//*[@id=\"app\"]/main/div/form/div[13]/div/div[1]/button");
 	private By signInLink = By.xpath("//a[text()='Sign In']");

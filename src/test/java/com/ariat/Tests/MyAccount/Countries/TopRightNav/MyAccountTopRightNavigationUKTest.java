@@ -40,7 +40,7 @@ public class MyAccountTopRightNavigationUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void myAccountAccessPersonalInfoUKTest() {
+	public void MyAccountAccessPersonalInfoUKTest() {
 		logger.info("Starting personal info UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -55,7 +55,7 @@ public class MyAccountTopRightNavigationUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void myAccountAccessOrdersUKTest() {
+	public void MyAccountAccessOrdersUKTest() {
 		logger.info("Starting orders UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -70,7 +70,7 @@ public class MyAccountTopRightNavigationUKTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void myAccountAccessWishListUKTest() {
+	public void MyAccountAccessWishListUKTest() {
 		logger.info("Starting wish list UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -85,7 +85,7 @@ public class MyAccountTopRightNavigationUKTest extends BaseTest {
 	}
 	
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

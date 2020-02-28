@@ -61,13 +61,13 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 	private WomenFootwearWesternFashionPage womenFootwearWesternFashionPage;
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
-	public void leftNavigationWomenFootwearRidingSubcategoriesUK() {
+	public void LeftNavigationWomenFootwearRidingSubcategoriesUK() {
 		logger.info("Starting left navigation Men Footwear Riding sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -85,7 +85,7 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void leftNavigationWomenFootwearCountrySubcategoriesUK() {
+	public void LeftNavigationWomenFootwearCountrySubcategoriesUK() {
 		logger.info("Starting left navigation Men Footwear Country sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -104,7 +104,7 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void leftNavigationWomenFootwearWesternSubcategoriesUK() {
+	public void LeftNavigationWomenFootwearWesternSubcategoriesUK() {
 		logger.info("Starting left navigation Men Footwear Western sub-categories test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -119,7 +119,7 @@ public class WomenFootwearSubcategoriesLeftNavUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();

@@ -43,7 +43,7 @@ public class DeleteCreditCardUKTest extends BaseTest {
 	}
 
 	@Test
-	public void deleteCreditCardFromPaymentInfoUKTest() {
+	public void DeleteCreditCardFromPaymentInfoUKTest() {
 		logger.info("Starting delete credit card from Payment Info UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -59,7 +59,7 @@ public class DeleteCreditCardUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

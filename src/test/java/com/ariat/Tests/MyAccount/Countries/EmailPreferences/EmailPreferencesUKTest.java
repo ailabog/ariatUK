@@ -36,13 +36,13 @@ public class EmailPreferencesUKTest extends BaseTest {
 	
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 	SetSelenium setPath = new SetSelenium();
 	setPath.setSelenium();
 	}
 
 	@Test
-	public void updatePersonalInformationTestUK() {
+	public void UpdatePersonalInformationTestUK() {
 		logger.info("Starting update personal information test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -57,7 +57,7 @@ public class EmailPreferencesUKTest extends BaseTest {
 	}
 	
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

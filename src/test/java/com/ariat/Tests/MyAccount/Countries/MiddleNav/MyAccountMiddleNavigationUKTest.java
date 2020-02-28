@@ -33,13 +33,13 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 	private MyAccountPage myAccountPage;
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 	SetSelenium setPath = new SetSelenium();
 	setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
-	public void myAccountAccessPersonalInfoUKTest() {
+	public void MyAccountAccessPersonalInfoUKTest() {
 		logger.info("Starting personal info UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -56,7 +56,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void myAccountAccessEmailPrefUKTest() {
+	public void MyAccountAccessEmailPrefUKTest() {
 		logger.info("Starting email preferences UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -71,7 +71,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 	}
 
 	@Test(priority = 2)
-	public void myAccountAccessAddressesUKTest() {
+	public void MyAccountAccessAddressesUKTest() {
 		logger.info("Starting addresses UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -88,7 +88,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 	}
 
 	@Test(priority = 3)
-	public void myAccountAccessPaymentInfoUKTest() {
+	public void MyAccountAccessPaymentInfoUKTest() {
 		logger.info("Starting payment info UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -105,7 +105,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 	}
 
 	@Test(priority = 4)
-	public void myAccountAccessOrdersUKTest() {
+	public void MyAccountAccessOrdersUKTest() {
 		logger.info("Starting orders UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -120,7 +120,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 	}
 
 	@Test(priority = 5)
-	public void myAccountAccessWishListUKTest() {
+	public void MyAccountAccessWishListUKTest() {
 		logger.info("Starting wish list UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -135,7 +135,7 @@ public class MyAccountMiddleNavigationUKTest extends BaseTest {
 	}
 	
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

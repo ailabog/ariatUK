@@ -63,13 +63,13 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	public static final String L_NAME = "Bogasieru";
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 	SetSelenium setPath = new SetSelenium();
 	setPath.setSelenium();
 	}
 
 	@Test(priority=0)
-	public void productPageWomenCategoryAddToWishListLoggedTestUK() {
+	public void ProductPageWomenCategoryAddToWishListLoggedTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist being logged test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -87,7 +87,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	} 
 	
     @Test(priority=1)
-	public void productPageWomenCategoryAddToWishListNotLoggedTestUK() {
+	public void ProductPageWomenCategoryAddToWishListNotLoggedTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist not being logged test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -105,7 +105,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	}
 	
 	@Test(priority=2)
-	public void productPageWomenCategoryAddToWishListCreateAccountTestUK() {
+	public void ProductPageWomenCategoryAddToWishListCreateAccountTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist create account test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -123,7 +123,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	} 
 	
 	@Test(priority=3)
-	public void productPageWomenCategoryFindSomeoneWishListTestUK() {
+	public void ProductPageWomenCategoryFindSomeoneWishListTestUK() {
 		logger.info("Starting product page -> Women Category find someone's WishList test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -142,7 +142,7 @@ public class ProductAddToWishListWomenCategoryUKTest extends BaseTest {
 	}
 	
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

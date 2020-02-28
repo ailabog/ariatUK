@@ -48,7 +48,7 @@ public class LoadMoreAddressUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void loadMoreAddressesFromEditUKTest() {
+	public void LoadMoreAddressesFromEditUKTest() {
 		logger.info("Starting load more addresses UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -62,7 +62,7 @@ public class LoadMoreAddressUKTest extends BaseTest {
 	}
 	
 	@Test(priority = 1)
-	public void loadMoreAddressesLeftNavigationUKTest() {
+	public void LoadMoreAddressesLeftNavigationUKTest() {
 		logger.info("Starting load more addresses left navigation UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -76,7 +76,7 @@ public class LoadMoreAddressUKTest extends BaseTest {
 	}
 	
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

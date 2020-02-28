@@ -50,13 +50,13 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 	public static final String L_NAME = "Bogasieru";
 	
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 	SetSelenium setPath = new SetSelenium();
 	setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
-	public void productPageWomenCategoryAddToWishListShareToAFriendTestUK() {
+	public void ProductPageWomenCategoryAddToWishListShareToAFriendTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & share it to a friend test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -75,7 +75,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void productPageWomenCategoryAddToWishListAddToCartTestUK() {
+	public void ProductPageWomenCategoryAddToWishListAddToCartTestUK() {
 		logger.info("Starting product page -> Women Category Add to Wishlist & add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -97,7 +97,7 @@ public class OperationsWishListWomenCategoryUKTest extends BaseTest {
 
 		
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

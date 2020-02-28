@@ -33,13 +33,13 @@ public class LogoutUKTest extends BaseTest {
 	private MyAccountPage myAccountPage;
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
 
 	@Test
-	public void logoutFromMyAccountMiddleUKTest() {
+	public void LogoutFromMyAccountMiddleUKTest() {
 		logger.info("Starting the logout UK test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -53,7 +53,7 @@ public class LogoutUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

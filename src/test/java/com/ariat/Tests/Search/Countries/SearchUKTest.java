@@ -29,13 +29,13 @@ public class SearchUKTest extends BaseTest {
 	private final String MESSAGE = "Product results for: ";
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
 
 	@Test
-	public void searchProductTestUK() {
+	public void SearchProductTestUK() {
 		logger.info("Starting search products UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -47,7 +47,7 @@ public class SearchUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		KillChrome kill = new KillChrome();

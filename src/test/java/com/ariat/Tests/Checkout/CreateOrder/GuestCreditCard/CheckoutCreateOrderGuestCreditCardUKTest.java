@@ -56,13 +56,13 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	private ListOfCreditCards typeCard;
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
 
 	@Test(priority = 0)
-	public void checkoutCreateNewOrderNotBeingLoggedMasterCardUK() {
+	public void CheckoutCreateNewOrderNotBeingLoggedMasterCardUK() {
 		logger.info("Starting checkout -> create new order without being logged credit card Master Card test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -86,7 +86,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void checkoutCreateNewOrderNotBeingLoggedVisaUK() {
+	public void CheckoutCreateNewOrderNotBeingLoggedVisaUK() {
 		logger.info("Starting checkout -> create new order without being logged credit card Visa test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -110,7 +110,7 @@ public class CheckoutCreateOrderGuestCreditCardUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void tearDown() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();

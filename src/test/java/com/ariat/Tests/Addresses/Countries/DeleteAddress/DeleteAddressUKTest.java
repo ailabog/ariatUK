@@ -49,7 +49,7 @@ public class DeleteAddressUKTest extends BaseTest {
 	}
 
 	@Test(priority = 0)
-	public void addAddressUKTest() {
+	public void AddAddressUKTest() {
 		logger.info("Starting add address UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -66,7 +66,7 @@ public class DeleteAddressUKTest extends BaseTest {
 	}
 
 	@Test(priority = 1)
-	public void deleteAddressTestUK() {
+	public void DeleteAddressTestUK() {
 		logger.info("Starting deleting address UK test");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());

@@ -44,13 +44,13 @@ public class AddCreditCardUKTest extends BaseTest {
 	private static final String MONTH = "December";
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
 
 	@Test
-	public void addCreditCardUKTest() {
+	public void AddCreditCardUKTest() {
 		String expirationDate = "MONTH/YEAR";
 		logger.info("Starting add a credit card UK test");
 		homePage = new HomePage(new ChromeDriver());
@@ -68,7 +68,7 @@ public class AddCreditCardUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		signInPage.quit();

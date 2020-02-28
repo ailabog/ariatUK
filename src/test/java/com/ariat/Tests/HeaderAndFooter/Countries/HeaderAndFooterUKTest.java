@@ -34,7 +34,7 @@ public class HeaderAndFooterUKTest extends BaseTest {
 	}
 
 	@Test
-	public void UKHeader() {
+	public void HeaderUK() {
 		logger.info("Starting the check for Header UK elements:");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -44,7 +44,7 @@ public class HeaderAndFooterUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		KillChrome kill = new KillChrome();

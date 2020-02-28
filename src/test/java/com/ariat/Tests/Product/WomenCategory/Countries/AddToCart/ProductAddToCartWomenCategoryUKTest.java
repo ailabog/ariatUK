@@ -37,13 +37,13 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 	private GlovesProductPage glovesProductPage;
 
 	@BeforeTest
-	public void setSeleniumUP() {
+	public void SetSeleniumUP() {
 		SetSelenium setPath = new SetSelenium();
 		setPath.setSelenium();
 	}
 
 	@Test
-	public void productPageWomenCategoryAddToCartTestUK() {
+	public void ProductPageWomenCategoryAddToCartTestUK() {
 		logger.info("Starting product page -> Women Category Gloves sub-category product glove add to cart test...");
 		homePage = new HomePage(new ChromeDriver());
 		homePage.load(environment.DEVELOPMENT.getURL());
@@ -59,7 +59,7 @@ public class ProductAddToCartWomenCategoryUKTest extends BaseTest {
 	}
 
 	@AfterTest
-	public void clearBrowserSession() {
+	public void ClearBrowserSession() {
 		homePage.quit();
 		homePageUK.quit();
 		womenCategoryPage.quit();
